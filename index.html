@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>設定6予測ランキング</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Share+Tech+Mono&display=swap');
+
+  :root {
+    --bg: #0a0e1a;
+    --surface: #111827;
+    --border: #1e2d40;
+    --accent: #00d4ff;
+    --accent2: #ff6b35;
+    --gold: #ffd700;
+    --silver: #c0c0c0;
+    --bronze: #cd7f32;
+    --text: #e2e8f0;
+    --muted: #64748b;
+    --green: #22c55e;
+    --red: #ef4444;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Noto Sans JP', sans-serif;
+    min-height: 100vh;
+  }
+
+  /* ヘッダー */
+  header {
+    background: linear-gradient(135deg, #0a0e1a 0%, #111827 50%, #0f172a 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 20px 16px 16px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+  }
+
+  .header-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .header-title {
+    font-size: 1.1rem;
+    font-weight: 900;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .header-title::before {
+    content: "◆";
+    color: var(--accent2);
+    font-size: 0.8rem;
+  }
+
+  .header-meta {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  /* フィルター */
+  .filter-bar {
+    max-width: 900px;
+    margin: 16px auto;
+    padding: 0 16px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .filter-btn {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+
+  .filter-btn.active,
+  .filter-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(0,212,255,0.08);
+  }
+
+  .search-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    outline: none;
+    font-family: 'Noto Sans JP', sans-serif;
+    width: 160px;
+  }
+
+  .search-box:focus {
+    border-color: var(--accent);
+  }
+
+  /* メインコンテンツ */
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 16px 40px;
+  }
+
+  /* サマリーカード */
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .summary-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px;
+    text-align: center;
+  }
+
+  .summary-card .label {
+    font-size: 0.65rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+
+  .summary-card .value {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-top: 4px;
+  }
+
+  /* ランキングリスト */
+  .section-title {
+    font-size: 0.7rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .rank-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .rank-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+    display: grid;
+    grid-template-columns: 36px 1fr auto;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+
+  .rank-item:hover {
+    border-color: var(--accent);
+    background: rgba(0,212,255,0.04);
+    transform: translateX(2px);
+  }
+
+  .rank-item.rank-1 { border-left: 3px solid var(--gold); }
+  .rank-item.rank-2 { border-left: 3px solid var(--silver); }
+  .rank-item.rank-3 { border-left: 3px solid var(--bronze); }
+  .rank-item.rank-other { border-left: 3px solid var(--border); }
+
+  .rank-num {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .rank-1 .rank-num { color: var(--gold); }
+  .rank-2 .rank-num { color: var(--silver); }
+  .rank-3 .rank-num { color: var(--bronze); }
+  .rank-other .rank-num { color: var(--muted); }
+
+  .rank-info {}
+
+  .rank-machine {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .rank-meta {
+    font-size: 0.7rem;
+    color: var(--muted);
+    margin-top: 3px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .rank-meta span {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+  }
+
+  .rank-right {
+    text-align: right;
+  }
+
+  .score-badge {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  .diff-value {
+    font-size: 0.7rem;
+    font-family: 'Share Tech Mono', monospace;
+    margin-top: 2px;
+  }
+
+  .diff-pos { color: var(--green); }
+  .diff-neg { color: var(--red); }
+  .diff-zero { color: var(--muted); }
+
+  /* 空状態 */
+  .empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--muted);
+  }
+
+  .empty-state .icon {
+    font-size: 2rem;
+    margin-bottom: 12px;
+  }
+
+  /* ローディング */
+  .loading {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--muted);
+    font-family: 'Share Tech Mono', monospace;
+  }
+
+  .loading::after {
+    content: '';
+    animation: dots 1.5s infinite;
+  }
+
+  @keyframes dots {
+    0%, 20% { content: '.'; }
+    40% { content: '..'; }
+    60%, 100% { content: '...'; }
+  }
+
+  /* 店舗タグ */
+  .store-tag {
+    display: inline-block;
+    background: rgba(0,212,255,0.1);
+    border: 1px solid rgba(0,212,255,0.2);
+    color: var(--accent);
+    font-size: 0.6rem;
+    padding: 1px 6px;
+    border-radius: 4px;
+    margin-left: 4px;
+  }
+
+  @media (max-width: 480px) {
+    .summary-grid { grid-template-columns: repeat(3, 1fr); }
+    .rank-meta { gap: 6px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="header-title">設定6予測ランキング</div>
+    <div class="header-meta" id="updated-time">データ読み込み中...</div>
+  </div>
+</header>
+
+<div class="filter-bar">
+  <button class="filter-btn active" onclick="filterStore('all', this)">全店舗</button>
+  <input class="search-box" type="text" placeholder="機種名で検索..." oninput="filterSearch(this.value)" />
+</div>
+
+<main>
+  <div class="summary-grid">
+    <div class="summary-card">
+      <div class="label">集計台数</div>
+      <div class="value" id="total-units">-</div>
+    </div>
+    <div class="summary-card">
+      <div class="label">高スコア台</div>
+      <div class="value" id="high-score-units">-</div>
+    </div>
+    <div class="summary-card">
+      <div class="label">店舗数</div>
+      <div class="value" id="total-stores">-</div>
+    </div>
+  </div>
+
+  <div class="section-title">RANKING — スコア順</div>
+  <div class="rank-list" id="rank-list">
+    <div class="loading">データ読み込み中</div>
+  </div>
+</main>
+
+<script>
+let allData = [];
+let currentStore = 'all';
+let currentSearch = '';
+
+async function loadData() {
+  try {
+    const res = await fetch('data.json?t=' + Date.now());
+    const json = await res.json();
+    allData = json.data || [];
+
+    document.getElementById('updated-time').textContent =
+      '最終更新: ' + json.updated;
+
+    // 店舗フィルターボタンを動的生成
+    const stores = [...new Set(allData.map(d => d.店舗名))];
+    const filterBar = document.querySelector('.filter-bar');
+    stores.forEach(store => {
+      const btn = document.createElement('button');
+      btn.className = 'filter-btn';
+      btn.textContent = store;
+      btn.onclick = function() { filterStore(store, this); };
+      filterBar.insertBefore(btn, filterBar.querySelector('.search-box'));
+    });
+
+    renderList();
+  } catch (e) {
+    document.getElementById('rank-list').innerHTML =
+      '<div class="empty-state"><div class="icon">⚠️</div>データの読み込みに失敗しました</div>';
+  }
+}
+
+function filterStore(store, btn) {
+  currentStore = store;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderList();
+}
+
+function filterSearch(val) {
+  currentSearch = val;
+  renderList();
+}
+
+function renderList() {
+  let data = allData;
+
+  if (currentStore !== 'all') {
+    data = data.filter(d => d.店舗名 === currentStore);
+  }
+
+  if (currentSearch) {
+    data = data.filter(d =>
+      d.機種名.includes(currentSearch) || d.台番号.includes(currentSearch)
+    );
+  }
+
+  // サマリー更新
+  document.getElementById('total-units').textContent = data.length;
+  document.getElementById('high-score-units').textContent =
+    data.filter(d => d.スコア >= 50).length;
+  const stores = new Set(data.map(d => d.店舗名));
+  document.getElementById('total-stores').textContent = stores.size;
+
+  const list = document.getElementById('rank-list');
+
+  if (data.length === 0) {
+    list.innerHTML = '<div class="empty-state"><div class="icon">🔍</div>該当データなし</div>';
+    return;
+  }
+
+  list.innerHTML = data.map((d, i) => {
+    const rank = i + 1;
+    const rankClass = rank <= 3 ? `rank-${rank}` : 'rank-other';
+    const rankLabel = rank <= 3 ? ['🥇','🥈','🥉'][rank-1] : rank;
+
+    const diffNum = d.差枚_num || 0;
+    const diffClass = diffNum > 0 ? 'diff-pos' : diffNum < 0 ? 'diff-neg' : 'diff-zero';
+
+    return `
+    <div class="rank-item ${rankClass}">
+      <div class="rank-num">${rankLabel}</div>
+      <div class="rank-info">
+        <div class="rank-machine">
+          ${d.機種名}
+          <span class="store-tag">${d.店舗名}</span>
+        </div>
+        <div class="rank-meta">
+          <span>🎰 ${d.台番号}番台</span>
+          <span>🎮 ${d.G数}G</span>
+          <span>BB:${d.BB} / RB:${d.RB}</span>
+        </div>
+      </div>
+      <div class="rank-right">
+        <div class="score-badge">${d.スコア}</div>
+        <div class="diff-value ${diffClass}">${d.差枚}</div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+loadData();
+</script>
+</body>
+</html>
