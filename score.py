@@ -9,8 +9,7 @@ from datetime import datetime
 STORES = [
     {
         "name": "将軍葛西店",
-        "csv_url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vT_uca2oOds_D2Vx--UdZ7bnY2_9iZvcVRW-Pjls3kIytv8kzEnkViKZwlKBYXoaBU1f-TDzQLYSOQQ/pub?output=csv&gid=0"
-    },
+        "csv_url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vT_uca2oOds_D2Vx--UdZ7bnY2_9iZvcVRW-Pjls3kIytv8kzEnkViKZwlKBYXoaBU1f-TDzQLYSOQQ/pub?output=csv"
     # 他店舗を追加する場合はここに追記
     # {"name": "メッセ西葛西店", "csv_url": "..."},
 ]
