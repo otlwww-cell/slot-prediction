@@ -1,0 +1,194 @@
+{
+  "store": "将軍葛西店",
+  "date": "2026/03/23",
+  "total": {
+    "総差枚": 4059.0,
+    "平均差枚": 2030.0,
+    "勝率": "100.0%(2/2)"
+  },
+  "machine_ranking": [
+    {
+      "rank": 1,
+      "machine": "化物語",
+      "total_diff": 4.0,
+      "avg_diff": 59.0,
+      "avg_games": 2.0,
+      "win_rate": 100.0,
+      "win_count": 2,
+      "total_count": 2
+    },
+    {
+      "rank": 2,
+      "machine": "モンキーターンV",
+      "total_diff": 2.0,
+      "avg_diff": 608.0,
+      "avg_games": 652.0,
+      "win_rate": 100.0,
+      "win_count": 4,
+      "total_count": 4
+    },
+    {
+      "rank": 3,
+      "machine": "ダーリン・イン・ザ・フランキス",
+      "total_diff": 1.0,
+      "avg_diff": 752.0,
+      "avg_games": 876.0,
+      "win_rate": 100.0,
+      "win_count": 2,
+      "total_count": 2
+    },
+    {
+      "rank": 4,
+      "machine": "デビル メイ クライ5 スタイリッシュトライブ",
+      "total_diff": 920.0,
+      "avg_diff": 307.0,
+      "avg_games": 1.0,
+      "win_rate": 33.3,
+      "win_count": 1,
+      "total_count": 3
+    },
+    {
+      "rank": 5,
+      "machine": "マイジャグラーV",
+      "total_diff": 881.0,
+      "avg_diff": 110.0,
+      "avg_games": 681.0,
+      "win_rate": 12.5,
+      "win_count": 1,
+      "total_count": 8
+    },
+    {
+      "rank": 6,
+      "machine": "ラブ嬢3～Wご指名はいかがですか?～",
+      "total_diff": 849.0,
+      "avg_diff": 283.0,
+      "avg_games": 433.0,
+      "win_rate": 66.7,
+      "win_count": 2,
+      "total_count": 3
+    },
+    {
+      "rank": 7,
+      "machine": "いざ！番長",
+      "total_diff": 382.0,
+      "avg_diff": 191.0,
+      "avg_games": 400.0,
+      "win_rate": 50.0,
+      "win_count": 1,
+      "total_count": 2
+    },
+    {
+      "rank": 8,
+      "machine": "新鬼武者3",
+      "total_diff": 371.0,
+      "avg_diff": 186.0,
+      "avg_games": 892.0,
+      "win_rate": 50.0,
+      "win_count": 1,
+      "total_count": 2
+    },
+    {
+      "rank": 9,
+      "machine": "アナザーゴッドハーデス‐解き放たれし槍撃ver.‐",
+      "total_diff": 271.0,
+      "avg_diff": 90.0,
+      "avg_games": 52.0,
+      "win_rate": 33.3,
+      "win_count": 1,
+      "total_count": 3
+    },
+    {
+      "rank": 10,
+      "machine": "モンスターハンターライズ",
+      "total_diff": 191.0,
+      "avg_diff": 48.0,
+      "avg_games": 185.0,
+      "win_rate": 50.0,
+      "win_count": 2,
+      "total_count": 4
+    }
+  ],
+  "tail_ranking": [
+    {
+      "tail": "0",
+      "total_diff": null,
+      "avg_diff": null,
+      "avg_games": 591.0,
+      "win_rate": null,
+      "win_count": null,
+      "total_count": null
+    },
+    {
+      "tail": "1",
+      "total_diff": 4555.0,
+      "avg_diff": 228.0,
+      "avg_games": 778.0,
+      "win_rate": 30.0,
+      "win_count": 6,
+      "total_count": 20
+    },
+    {
+      "tail": "2",
+      "total_diff": null,
+      "avg_diff": null,
+      "avg_games": 624.0,
+      "win_rate": null,
+      "win_count": null,
+      "total_count": null
+    },
+    {
+      "tail": "3",
+      "total_diff": null,
+      "avg_diff": null,
+      "avg_games": 302.0,
+      "win_rate": null,
+      "win_count": null,
+      "total_count": null
+    },
+    {
+      "tail": "5",
+      "total_diff": 347.0,
+      "avg_diff": 18.0,
+      "avg_games": 534.0,
+      "win_rate": 21.1,
+      "win_count": 4,
+      "total_count": 19
+    },
+    {
+      "tail": "6",
+      "total_diff": null,
+      "avg_diff": null,
+      "avg_games": 941.0,
+      "win_rate": null,
+      "win_count": null,
+      "total_count": null
+    },
+    {
+      "tail": "7",
+      "total_diff": 89.0,
+      "avg_diff": 4.0,
+      "avg_games": 289.0,
+      "win_rate": 15.0,
+      "win_count": 3,
+      "total_count": 20
+    },
+    {
+      "tail": "8",
+      "total_diff": null,
+      "avg_diff": null,
+      "avg_games": 626.0,
+      "win_rate": null,
+      "win_count": null,
+      "total_count": null
+    },
+    {
+      "tail": "ゾロ目",
+      "total_diff": 168.0,
+      "avg_diff": 9.0,
+      "avg_games": 713.0,
+      "win_rate": 36.8,
+      "win_count": 7,
+      "total_count": 19
+    }
+  ]
+}
