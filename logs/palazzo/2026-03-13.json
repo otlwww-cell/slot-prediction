@@ -1,0 +1,294 @@
+{
+  "store": "パラッツォ葛西店",
+  "date": "2026/03/13",
+  "total": {
+    "総差枚": 3886.0,
+    "平均差枚": 11.0,
+    "勝率": "38.2%(132/346)"
+  },
+  "machine_ranking": [
+    {
+      "rank": 1,
+      "machine": "攻殻機動隊",
+      "total_diff": 24.0,
+      "avg_diff": 785.0,
+      "avg_games": 4.0,
+      "win_rate": 66.7,
+      "win_count": 4,
+      "total_count": 6
+    },
+    {
+      "rank": 2,
+      "machine": "化物語",
+      "total_diff": 15.0,
+      "avg_diff": 549.0,
+      "avg_games": 2.0,
+      "win_rate": 66.7,
+      "win_count": 4,
+      "total_count": 6
+    },
+    {
+      "rank": 3,
+      "machine": "スマスロ北斗の拳",
+      "total_diff": 8.0,
+      "avg_diff": 868.0,
+      "avg_games": 1.0,
+      "win_rate": 87.5,
+      "win_count": 7,
+      "total_count": 8
+    },
+    {
+      "rank": 4,
+      "machine": "革命機ヴァルヴレイヴ2",
+      "total_diff": 6.0,
+      "avg_diff": 855.0,
+      "avg_games": 857.0,
+      "win_rate": 50.0,
+      "win_count": 4,
+      "total_count": 8
+    },
+    {
+      "rank": 5,
+      "machine": "ハッピージャグラーVIII",
+      "total_diff": 6.0,
+      "avg_diff": 850.0,
+      "avg_games": 761.0,
+      "win_rate": 66.7,
+      "win_count": 6,
+      "total_count": 9
+    },
+    {
+      "rank": 6,
+      "machine": "沖ドキ!DUO アンコール",
+      "total_diff": 6.0,
+      "avg_diff": 762.0,
+      "avg_games": 483.0,
+      "win_rate": 42.9,
+      "win_count": 6,
+      "total_count": 14
+    },
+    {
+      "rank": 7,
+      "machine": "戦国乙女4 戦乱に閃く炯眼の軍師",
+      "total_diff": 5.0,
+      "avg_diff": 233.0,
+      "avg_games": 1.0,
+      "win_rate": 33.3,
+      "win_count": 1,
+      "total_count": 3
+    },
+    {
+      "rank": 8,
+      "machine": "主役は銭形5",
+      "total_diff": 4.0,
+      "avg_diff": 142.0,
+      "avg_games": 1.0,
+      "win_rate": 66.7,
+      "win_count": 2,
+      "total_count": 3
+    },
+    {
+      "rank": 9,
+      "machine": "ネオアイムジャグラーEX",
+      "total_diff": 4.0,
+      "avg_diff": 62.0,
+      "avg_games": 185.0,
+      "win_rate": 40.9,
+      "win_count": 9,
+      "total_count": 22
+    },
+    {
+      "rank": 10,
+      "machine": "ゴブリンスレイヤーII",
+      "total_diff": 3.0,
+      "avg_diff": 951.0,
+      "avg_games": 988.0,
+      "win_rate": 25.0,
+      "win_count": 1,
+      "total_count": 4
+    },
+    {
+      "rank": 11,
+      "machine": "東京リベンジャーズ",
+      "total_diff": 3.0,
+      "avg_diff": 915.0,
+      "avg_games": 979.0,
+      "win_rate": 50.0,
+      "win_count": 2,
+      "total_count": 4
+    },
+    {
+      "rank": 12,
+      "machine": "スマスロ ハナビ",
+      "total_diff": 3.0,
+      "avg_diff": 771.0,
+      "avg_games": 754.0,
+      "win_rate": 80.0,
+      "win_count": 4,
+      "total_count": 5
+    },
+    {
+      "rank": 13,
+      "machine": "うみねこのなく頃に2",
+      "total_diff": 3.0,
+      "avg_diff": 698.0,
+      "avg_games": 1.0,
+      "win_rate": 100.0,
+      "win_count": 2,
+      "total_count": 2
+    },
+    {
+      "rank": 14,
+      "machine": "アズールレーン THE ANIMATION",
+      "total_diff": 2.0,
+      "avg_diff": 770.0,
+      "avg_games": 692.0,
+      "win_rate": 50.0,
+      "win_count": 2,
+      "total_count": 4
+    },
+    {
+      "rank": 15,
+      "machine": "甲鉄城のカバネリ 海門(うなと)決戦",
+      "total_diff": 2.0,
+      "avg_diff": 549.0,
+      "avg_games": 142.0,
+      "win_rate": 44.4,
+      "win_count": 8,
+      "total_count": 18
+    },
+    {
+      "rank": 16,
+      "machine": "ジャグラーガールズ",
+      "total_diff": 1.0,
+      "avg_diff": 833.0,
+      "avg_games": 306.0,
+      "win_rate": 33.3,
+      "win_count": 2,
+      "total_count": 6
+    },
+    {
+      "rank": 17,
+      "machine": "ディスクアップ ULTRAREMIX",
+      "total_diff": 1.0,
+      "avg_diff": 417.0,
+      "avg_games": 472.0,
+      "win_rate": 66.7,
+      "win_count": 2,
+      "total_count": 3
+    },
+    {
+      "rank": 18,
+      "machine": "キングハナハナ-30",
+      "total_diff": 1.0,
+      "avg_diff": 242.0,
+      "avg_games": 310.0,
+      "win_rate": 50.0,
+      "win_count": 2,
+      "total_count": 4
+    },
+    {
+      "rank": 19,
+      "machine": "アレックス ブライト",
+      "total_diff": 1.0,
+      "avg_diff": 85.0,
+      "avg_games": 542.0,
+      "win_rate": 50.0,
+      "win_count": 1,
+      "total_count": 2
+    },
+    {
+      "rank": 20,
+      "machine": "ミスタージャグラー",
+      "total_diff": 897.0,
+      "avg_diff": 299.0,
+      "avg_games": 5.0,
+      "win_rate": 66.7,
+      "win_count": 2,
+      "total_count": 3
+    }
+  ],
+  "tail_ranking": [
+    {
+      "tail": "0",
+      "total_diff": null,
+      "avg_diff": null,
+      "avg_games": 3954.0,
+      "win_rate": null,
+      "win_count": null,
+      "total_count": null
+    },
+    {
+      "tail": "1",
+      "total_diff": null,
+      "avg_diff": null,
+      "avg_games": 3654.0,
+      "win_rate": null,
+      "win_count": null,
+      "total_count": null
+    },
+    {
+      "tail": "2",
+      "total_diff": null,
+      "avg_diff": null,
+      "avg_games": 3380.0,
+      "win_rate": null,
+      "win_count": null,
+      "total_count": null
+    },
+    {
+      "tail": "3",
+      "total_diff": null,
+      "avg_diff": null,
+      "avg_games": 3780.0,
+      "win_rate": null,
+      "win_count": null,
+      "total_count": null
+    },
+    {
+      "tail": "5",
+      "total_diff": 7138.0,
+      "avg_diff": 159.0,
+      "avg_games": 3463.0,
+      "win_rate": 40.0,
+      "win_count": 18,
+      "total_count": 45
+    },
+    {
+      "tail": "6",
+      "total_diff": 3561.0,
+      "avg_diff": 81.0,
+      "avg_games": 3357.0,
+      "win_rate": 40.9,
+      "win_count": 18,
+      "total_count": 44
+    },
+    {
+      "tail": "7",
+      "total_diff": 9702.0,
+      "avg_diff": 226.0,
+      "avg_games": 4099.0,
+      "win_rate": 44.2,
+      "win_count": 19,
+      "total_count": 43
+    },
+    {
+      "tail": "8",
+      "total_diff": 2629.0,
+      "avg_diff": 63.0,
+      "avg_games": 3630.0,
+      "win_rate": 42.9,
+      "win_count": 18,
+      "total_count": 42
+    },
+    {
+      "tail": "ゾロ目",
+      "total_diff": null,
+      "avg_diff": null,
+      "avg_games": 3706.0,
+      "win_rate": null,
+      "win_count": null,
+      "total_count": null
+    }
+  ]
+}
