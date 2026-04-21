@@ -1,41 +1,41 @@
 {
-  "updated": "2026-04-21 21:32",
+  "updated": "2026-04-21 21:34",
   "stores": [
     {
       "store": "将軍葛西店",
-      "date": "2026/04/04",
+      "date": "2026/04/05",
       "total": {
-        "総差枚": 5922.0,
-        "平均差枚": 1480.0,
-        "勝率": "75.0%(3/4)"
+        "総差枚": 4190.0,
+        "平均差枚": 1048.0,
+        "勝率": "100.0%(4/4)"
       },
       "today": {
         "machine_ranking": [
           {
             "rank": 1,
-            "machine": "からくりサーカス",
-            "total_diff": 5.0,
-            "avg_diff": 922.0,
+            "machine": "ディスクアップ2",
+            "total_diff": 4.0,
+            "avg_diff": 190.0,
             "avg_games": 1.0,
-            "win_rate": 75.0,
-            "win_count": 3,
+            "win_rate": 100.0,
+            "win_count": 4,
             "total_count": 4
           },
           {
             "rank": 2,
-            "machine": "北斗の拳 転生の章2",
-            "total_diff": 5.0,
-            "avg_diff": 56.0,
-            "avg_games": 1.0,
-            "win_rate": 60.0,
+            "machine": "マイジャグラーV",
+            "total_diff": 3.0,
+            "avg_diff": 674.0,
+            "avg_games": 459.0,
+            "win_rate": 37.5,
             "win_count": 3,
-            "total_count": 5
+            "total_count": 8
           },
           {
             "rank": 3,
-            "machine": "スーパーブラックジャック",
-            "total_diff": 3.0,
-            "avg_diff": 670.0,
+            "machine": "化物語",
+            "total_diff": 2.0,
+            "avg_diff": 657.0,
             "avg_games": 1.0,
             "win_rate": 50.0,
             "win_count": 1,
@@ -43,176 +43,166 @@
           },
           {
             "rank": 4,
-            "machine": "新ハナビ",
-            "total_diff": 3.0,
-            "avg_diff": 47.0,
-            "avg_games": 762.0,
-            "win_rate": 50.0,
-            "win_count": 2,
-            "total_count": 4
+            "machine": "甲鉄城のカバネリ",
+            "total_diff": 1.0,
+            "avg_diff": 678.0,
+            "avg_games": 559.0,
+            "win_rate": 100.0,
+            "win_count": 3,
+            "total_count": 3
           },
           {
             "rank": 5,
-            "machine": "甲鉄城のカバネリ 海門(うなと)決戦",
-            "total_diff": 2.0,
-            "avg_diff": 78.0,
-            "avg_games": 1.0,
-            "win_rate": 50.0,
-            "win_count": 1,
-            "total_count": 2
-          },
-          {
-            "rank": 6,
-            "machine": "吉宗(スマスロ)",
+            "machine": "押忍!番長ZERO",
             "total_diff": 1.0,
-            "avg_diff": 348.0,
-            "avg_games": 337.0,
-            "win_rate": 50.0,
-            "win_count": 2,
-            "total_count": 4
-          },
-          {
-            "rank": 7,
-            "machine": "新鬼武者2",
-            "total_diff": 1.0,
-            "avg_diff": 280.0,
-            "avg_games": 640.0,
-            "win_rate": 50.0,
-            "win_count": 1,
-            "total_count": 2
-          },
-          {
-            "rank": 8,
-            "machine": "炎炎ノ消防隊",
-            "total_diff": 1.0,
-            "avg_diff": 273.0,
-            "avg_games": 636.0,
+            "avg_diff": 616.0,
+            "avg_games": 808.0,
             "win_rate": 100.0,
             "win_count": 2,
             "total_count": 2
           },
           {
-            "rank": 9,
-            "machine": "バイオハザード RE:2",
-            "total_diff": 1.0,
-            "avg_diff": 6.0,
-            "avg_games": 503.0,
+            "rank": 6,
+            "machine": "ラブ嬢3～Wご指名はいかがですか?～",
+            "total_diff": 831.0,
+            "avg_diff": 277.0,
+            "avg_games": 489.0,
+            "win_rate": 33.3,
+            "win_count": 1,
+            "total_count": 3
+          },
+          {
+            "rank": 7,
+            "machine": "アイムジャグラーEX-TP",
+            "total_diff": 527.0,
+            "avg_diff": 59.0,
+            "avg_games": 1.0,
+            "win_rate": 33.3,
+            "win_count": 3,
+            "total_count": 9
+          },
+          {
+            "rank": 8,
+            "machine": "甲鉄城のカバネリ 海門(うなと)決戦",
+            "total_diff": 384.0,
+            "avg_diff": 192.0,
+            "avg_games": 4.0,
             "win_rate": 50.0,
             "win_count": 1,
             "total_count": 2
           },
           {
+            "rank": 9,
+            "machine": "新ハナビ",
+            "total_diff": 315.0,
+            "avg_diff": 79.0,
+            "avg_games": 2.0,
+            "win_rate": 50.0,
+            "win_count": 2,
+            "total_count": 4
+          },
+          {
             "rank": 10,
-            "machine": "ひぐらしのなく頃に 業",
-            "total_diff": 584.0,
-            "avg_diff": 292.0,
-            "avg_games": 222.0,
+            "machine": "炎炎ノ消防隊",
+            "total_diff": 124.0,
+            "avg_diff": 62.0,
+            "avg_games": 942.0,
             "win_rate": 50.0,
             "win_count": 1,
             "total_count": 2
           },
           {
             "rank": 11,
-            "machine": "マギアレコード 魔法少女まどか☆マギカ外伝",
-            "total_diff": 219.0,
-            "avg_diff": 110.0,
-            "avg_games": 1.0,
+            "machine": "いざ！番長",
+            "total_diff": 61.0,
+            "avg_diff": 30.0,
+            "avg_games": 626.0,
             "win_rate": 50.0,
             "win_count": 1,
             "total_count": 2
-          },
-          {
-            "rank": 12,
-            "machine": "甲鉄城のカバネリ",
-            "total_diff": 149.0,
-            "avg_diff": 50.0,
-            "avg_games": 499.0,
-            "win_rate": 33.3,
-            "win_count": 1,
-            "total_count": 3
           }
         ],
         "tail_ranking": [
           {
             "tail": "0",
-            "total_diff": 3743.0,
-            "avg_diff": 187.0,
-            "avg_games": 983.0,
-            "win_rate": 25.0,
-            "win_count": 5,
-            "total_count": 20
-          },
-          {
-            "tail": "1",
             "total_diff": null,
             "avg_diff": null,
-            "avg_games": 1268.0,
+            "avg_games": 1126.0,
             "win_rate": null,
             "win_count": null,
             "total_count": null
           },
           {
+            "tail": "1",
+            "total_diff": 1468.0,
+            "avg_diff": 73.0,
+            "avg_games": 1152.0,
+            "win_rate": 50.0,
+            "win_count": 10,
+            "total_count": 20
+          },
+          {
             "tail": "2",
             "total_diff": null,
             "avg_diff": null,
-            "avg_games": 1463.0,
+            "avg_games": 1677.0,
             "win_rate": null,
             "win_count": null,
             "total_count": null
           },
           {
             "tail": "3",
-            "total_diff": 2062.0,
-            "avg_diff": 109.0,
-            "avg_games": 1351.0,
-            "win_rate": 31.6,
-            "win_count": 6,
-            "total_count": 19
+            "total_diff": null,
+            "avg_diff": null,
+            "avg_games": 1105.0,
+            "win_rate": null,
+            "win_count": null,
+            "total_count": null
           },
           {
             "tail": "5",
             "total_diff": null,
             "avg_diff": null,
-            "avg_games": 1243.0,
+            "avg_games": 1543.0,
             "win_rate": null,
             "win_count": null,
             "total_count": null
           },
           {
             "tail": "6",
-            "total_diff": null,
-            "avg_diff": null,
-            "avg_games": 1171.0,
-            "win_rate": null,
-            "win_count": null,
-            "total_count": null
+            "total_diff": 2109.0,
+            "avg_diff": 111.0,
+            "avg_games": 1194.0,
+            "win_rate": 21.1,
+            "win_count": 4,
+            "total_count": 19
           },
           {
             "tail": "7",
             "total_diff": null,
             "avg_diff": null,
-            "avg_games": 1003.0,
+            "avg_games": 1301.0,
             "win_rate": null,
             "win_count": null,
             "total_count": null
           },
           {
             "tail": "8",
-            "total_diff": 700.0,
-            "avg_diff": 35.0,
-            "avg_games": 1128.0,
-            "win_rate": 35.0,
-            "win_count": 7,
-            "total_count": 20
+            "total_diff": null,
+            "avg_diff": null,
+            "avg_games": 1561.0,
+            "win_rate": null,
+            "win_count": null,
+            "total_count": null
           },
           {
             "tail": "ゾロ目",
-            "total_diff": 3811.0,
-            "avg_diff": 201.0,
-            "avg_games": 1329.0,
-            "win_rate": 36.8,
-            "win_count": 7,
-            "total_count": 19
+            "total_diff": null,
+            "avg_diff": null,
+            "avg_games": 1656.0,
+            "win_rate": null,
+            "win_count": null,
+            "total_count": null
           }
         ]
       },
@@ -226,11 +216,18 @@
             "days": 2
           },
           {
+            "machine": "甲鉄城のカバネリ 海門(うなと)決戦",
+            "score": 60.4,
+            "hot_rate": 100.0,
+            "avg_diff": 193,
+            "days": 2
+          },
+          {
             "machine": "新ハナビ",
             "score": 60.3,
             "hot_rate": 100.0,
-            "avg_diff": 137,
-            "days": 4
+            "avg_diff": 172,
+            "days": 5
           },
           {
             "machine": "マギアレコード 魔法少女まどか☆マギカ外伝",
@@ -247,6 +244,20 @@
             "days": 2
           },
           {
+            "machine": "炎炎ノ消防隊",
+            "score": 60.1,
+            "hot_rate": 100.0,
+            "avg_diff": 42,
+            "days": 3
+          },
+          {
+            "machine": "いざ！番長",
+            "score": 60.1,
+            "hot_rate": 100.0,
+            "avg_diff": 35,
+            "days": 2
+          },
+          {
             "machine": "ダーリン・イン・ザ・フランキス",
             "score": 60.0,
             "hot_rate": 100.0,
@@ -254,14 +265,7 @@
             "days": 2
           },
           {
-            "machine": "マイジャグラーV",
-            "score": 60.0,
-            "hot_rate": 100.0,
-            "avg_diff": 2,
-            "days": 2
-          },
-          {
-            "machine": "炎炎ノ消防隊",
+            "machine": "押忍!番長ZERO",
             "score": 60.0,
             "hot_rate": 100.0,
             "avg_diff": 1,
@@ -303,24 +307,10 @@
             "days": 2
           },
           {
-            "machine": "ファンキージャグラー2",
-            "score": 40.6,
-            "hot_rate": 66.7,
-            "avg_diff": 281,
-            "days": 3
-          },
-          {
-            "machine": "ラブ嬢3～Wご指名はいかがですか?～",
-            "score": 40.4,
-            "hot_rate": 66.7,
-            "avg_diff": 217,
-            "days": 3
-          },
-          {
-            "machine": "北斗の拳 転生の章2",
-            "score": 30.0,
-            "hot_rate": 50.0,
-            "avg_diff": 5,
+            "machine": "ディスクアップ2",
+            "score": 60.0,
+            "hot_rate": 100.0,
+            "avg_diff": 2,
             "days": 2
           }
         ],
@@ -328,47 +318,47 @@
           {
             "tail": "ゾロ目",
             "avg_win_rate": 36.8,
-            "days": 5
+            "days": 6
+          },
+          {
+            "tail": "1",
+            "avg_win_rate": 35.0,
+            "days": 6
           },
           {
             "tail": "2",
             "avg_win_rate": 35.0,
-            "days": 5
+            "days": 6
           },
           {
             "tail": "3",
             "avg_win_rate": 31.6,
-            "days": 5
+            "days": 6
           },
           {
             "tail": "8",
             "avg_win_rate": 30.0,
-            "days": 5
-          },
-          {
-            "tail": "1",
-            "avg_win_rate": 27.5,
-            "days": 5
+            "days": 6
           },
           {
             "tail": "5",
             "avg_win_rate": 26.3,
-            "days": 5
+            "days": 6
           },
           {
             "tail": "0",
             "avg_win_rate": 25.0,
-            "days": 5
+            "days": 6
           },
           {
             "tail": "6",
             "avg_win_rate": 21.1,
-            "days": 5
+            "days": 6
           },
           {
             "tail": "7",
             "avg_win_rate": 15.0,
-            "days": 5
+            "days": 6
           }
         ],
         "weekday_scores": [
@@ -394,11 +384,11 @@
           },
           {
             "weekday": "日",
-            "avg_total_diff": 150,
-            "days": 1
+            "avg_total_diff": 2170,
+            "days": 2
           }
         ],
-        "log_count": 5
+        "log_count": 6
       }
     }
   ]
