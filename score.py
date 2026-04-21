@@ -107,6 +107,7 @@ def parse_anaslo(text):
     from io import StringIO as _SIO
 
     in_tail = False
+    tail_debug_count = 0
     for line in lines:
         if "末尾別データ" in line:
             in_tail = True
@@ -115,6 +116,9 @@ def parse_anaslo(text):
             break
         if not in_tail:
             continue
+        if tail_debug_count < 15:
+            print(f"  [TAIL LINE] {repr(line[:80])}")
+            tail_debug_count += 1
         if "平均G数" in line or "末尾別差枚" in line:
             continue
 
