@@ -77,24 +77,26 @@ def parse_anaslo(text):
                      "total_diff": None, "avg_diff": None,
                      "avg_games": None, "win_rate": None,
                      "win_count": None, "total_count": None}
-            for j in range(i+1, min(i+6, len(lines))):
+            for j in range(i+1, min(i+8, len(lines))):
                 vals = re.split(r"\t+", lines[j])
-                if len(vals) < 3:
+                if len(vals) < 2:
                     vals = re.split(r"\s{2,}", lines[j])
-                if len(vals) >= 3:
-                    d = clean_num(vals[0])
-                    ad = clean_num(vals[1])
-                    ag = clean_num(vals[2])
-                    if ag is not None:
-                        entry["total_diff"] = d
-                        entry["avg_diff"] = ad
-                        entry["avg_games"] = ag
-                        wr_str = vals[3] if len(vals) > 3 else ""
-                        wr, wc, tc = parse_winrate(wr_str)
-                        entry["win_rate"] = wr
-                        entry["win_count"] = wc
-                        entry["total_count"] = tc
+                # 勝率パターンを含む行を探す
+                wr_str = ""
+                for v in vals:
+                    if re.search(r"\d+\.\d+%\(\d+/\d+\)", v):
+                        wr_str = v
                         break
+                if wr_str:
+                    # A=機種別差枚 B=平均差枚 C=平均G数 D=勝率
+                    entry["total_diff"] = clean_num(vals[0]) if len(vals) > 0 else None
+                    entry["avg_diff"] = clean_num(vals[1]) if len(vals) > 1 else None
+                    entry["avg_games"] = clean_num(vals[2]) if len(vals) > 2 else None
+                    wr, wc, tc = parse_winrate(wr_str)
+                    entry["win_rate"] = wr
+                    entry["win_count"] = wc
+                    entry["total_count"] = tc
+                    break
             result["machine_ranking"].append(entry)
 
     # 末尾別データ：複数パターンに対応
