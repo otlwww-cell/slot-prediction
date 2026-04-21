@@ -1,0 +1,294 @@
+{
+  "store": "パラッツォ葛西店",
+  "date": "2026/02/22",
+  "total": {
+    "総差枚": 208396.0,
+    "平均差枚": 602.0,
+    "勝率": "57.8%(200/346)"
+  },
+  "machine_ranking": [
+    {
+      "rank": 1,
+      "machine": "東京喰種",
+      "total_diff": 56.0,
+      "avg_diff": 528.0,
+      "avg_games": 3.0,
+      "win_rate": 66.7,
+      "win_count": 12,
+      "total_count": 18
+    },
+    {
+      "rank": 2,
+      "machine": "マイジャグラーV",
+      "total_diff": 49.0,
+      "avg_diff": 710.0,
+      "avg_games": 1.0,
+      "win_rate": 90.6,
+      "win_count": 29,
+      "total_count": 32
+    },
+    {
+      "rank": 3,
+      "machine": "ゴーゴージャグラー3",
+      "total_diff": 22.0,
+      "avg_diff": 94.0,
+      "avg_games": 1.0,
+      "win_rate": 92.9,
+      "win_count": 13,
+      "total_count": 14
+    },
+    {
+      "rank": 4,
+      "machine": "ジャグラーガールズ",
+      "total_diff": 19.0,
+      "avg_diff": 291.0,
+      "avg_games": 3.0,
+      "win_rate": 100.0,
+      "win_count": 6,
+      "total_count": 6
+    },
+    {
+      "rank": 5,
+      "machine": "革命機ヴァルヴレイヴ2",
+      "total_diff": 16.0,
+      "avg_diff": 456.0,
+      "avg_games": 2.0,
+      "win_rate": 62.5,
+      "win_count": 5,
+      "total_count": 8
+    },
+    {
+      "rank": 6,
+      "machine": "スマスロ北斗の拳",
+      "total_diff": 16.0,
+      "avg_diff": 409.0,
+      "avg_games": 2.0,
+      "win_rate": 100.0,
+      "win_count": 8,
+      "total_count": 8
+    },
+    {
+      "rank": 7,
+      "machine": "スマスロ炎炎ノ消防隊2",
+      "total_diff": 14.0,
+      "avg_diff": 313.0,
+      "avg_games": 1.0,
+      "win_rate": 55.6,
+      "win_count": 5,
+      "total_count": 9
+    },
+    {
+      "rank": 8,
+      "machine": "スーパーブラックジャック",
+      "total_diff": 13.0,
+      "avg_diff": 489.0,
+      "avg_games": 3.0,
+      "win_rate": 75.0,
+      "win_count": 3,
+      "total_count": 4
+    },
+    {
+      "rank": 9,
+      "machine": "モンスターハンターライズ",
+      "total_diff": 10.0,
+      "avg_diff": 520.0,
+      "avg_games": 2.0,
+      "win_rate": 75.0,
+      "win_count": 3,
+      "total_count": 4
+    },
+    {
+      "rank": 10,
+      "machine": "からくりサーカス",
+      "total_diff": 10.0,
+      "avg_diff": 291.0,
+      "avg_games": 2.0,
+      "win_rate": 75.0,
+      "win_count": 3,
+      "total_count": 4
+    },
+    {
+      "rank": 11,
+      "machine": "主役は銭形5",
+      "total_diff": 10.0,
+      "avg_diff": 32.0,
+      "avg_games": 2.0,
+      "win_rate": 75.0,
+      "win_count": 3,
+      "total_count": 4
+    },
+    {
+      "rank": 12,
+      "machine": "甲鉄城のカバネリ",
+      "total_diff": 9.0,
+      "avg_diff": 212.0,
+      "avg_games": 1.0,
+      "win_rate": 80.0,
+      "win_count": 4,
+      "total_count": 5
+    },
+    {
+      "rank": 13,
+      "machine": "スマート沖スロ スターハナハナ",
+      "total_diff": 8.0,
+      "avg_diff": 851.0,
+      "avg_games": 1.0,
+      "win_rate": 83.3,
+      "win_count": 5,
+      "total_count": 6
+    },
+    {
+      "rank": 14,
+      "machine": "痛いのは嫌なので防御力に極振りしたいと思います。",
+      "total_diff": 8.0,
+      "avg_diff": 826.0,
+      "avg_games": 2.0,
+      "win_rate": 33.3,
+      "win_count": 1,
+      "total_count": 3
+    },
+    {
+      "rank": 15,
+      "machine": "アレックス ブライト",
+      "total_diff": 7.0,
+      "avg_diff": 938.0,
+      "avg_games": 1.0,
+      "win_rate": 75.0,
+      "win_count": 3,
+      "total_count": 4
+    },
+    {
+      "rank": 16,
+      "machine": "いざ！番長",
+      "total_diff": 7.0,
+      "avg_diff": 547.0,
+      "avg_games": 1.0,
+      "win_rate": 60.0,
+      "win_count": 3,
+      "total_count": 5
+    },
+    {
+      "rank": 17,
+      "machine": "キングハナハナ-30",
+      "total_diff": 6.0,
+      "avg_diff": 698.0,
+      "avg_games": 1.0,
+      "win_rate": 100.0,
+      "win_count": 4,
+      "total_count": 4
+    },
+    {
+      "rank": 18,
+      "machine": "ネオアイムジャグラーEX",
+      "total_diff": 5.0,
+      "avg_diff": 962.0,
+      "avg_games": 271.0,
+      "win_rate": 59.1,
+      "win_count": 13,
+      "total_count": 22
+    },
+    {
+      "rank": 19,
+      "machine": "ハッピージャグラーVIII",
+      "total_diff": 4.0,
+      "avg_diff": 839.0,
+      "avg_games": 538.0,
+      "win_rate": 55.6,
+      "win_count": 5,
+      "total_count": 9
+    },
+    {
+      "rank": 20,
+      "machine": "スマスロ ハナビ",
+      "total_diff": 4.0,
+      "avg_diff": 488.0,
+      "avg_games": 898.0,
+      "win_rate": 60.0,
+      "win_count": 3,
+      "total_count": 5
+    }
+  ],
+  "tail_ranking": [
+    {
+      "tail": "0",
+      "total_diff": null,
+      "avg_diff": null,
+      "avg_games": 6426.0,
+      "win_rate": null,
+      "win_count": null,
+      "total_count": null
+    },
+    {
+      "tail": "1",
+      "total_diff": 46216.0,
+      "avg_diff": 1075.0,
+      "avg_games": 6498.0,
+      "win_rate": 65.1,
+      "win_count": 28,
+      "total_count": 43
+    },
+    {
+      "tail": "2",
+      "total_diff": 3422.0,
+      "avg_diff": 80.0,
+      "avg_games": 6427.0,
+      "win_rate": 60.5,
+      "win_count": 26,
+      "total_count": 43
+    },
+    {
+      "tail": "3",
+      "total_diff": 22864.0,
+      "avg_diff": 508.0,
+      "avg_games": 6776.0,
+      "win_rate": 62.2,
+      "win_count": 28,
+      "total_count": 45
+    },
+    {
+      "tail": "5",
+      "total_diff": 32662.0,
+      "avg_diff": 726.0,
+      "avg_games": 6516.0,
+      "win_rate": 57.8,
+      "win_count": 26,
+      "total_count": 45
+    },
+    {
+      "tail": "6",
+      "total_diff": 29748.0,
+      "avg_diff": 676.0,
+      "avg_games": 6498.0,
+      "win_rate": 54.5,
+      "win_count": 24,
+      "total_count": 44
+    },
+    {
+      "tail": "7",
+      "total_diff": 64738.0,
+      "avg_diff": 1506.0,
+      "avg_games": 6622.0,
+      "win_rate": 67.4,
+      "win_count": 29,
+      "total_count": 43
+    },
+    {
+      "tail": "8",
+      "total_diff": 8831.0,
+      "avg_diff": 210.0,
+      "avg_games": 6553.0,
+      "win_rate": 54.8,
+      "win_count": 23,
+      "total_count": 42
+    },
+    {
+      "tail": "ゾロ目",
+      "total_diff": null,
+      "avg_diff": null,
+      "avg_games": 6293.0,
+      "win_rate": null,
+      "win_count": null,
+      "total_count": null
+    }
+  ]
+}
