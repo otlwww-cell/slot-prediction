@@ -102,6 +102,10 @@ def parse_anaslo(text):
     # 末尾別データ：複数パターンに対応
     TAIL_KEYS = ["0","1","2","3","4","5","6","7","8","9","ゾロ目"]
 
+    # 末尾別データをCSVパーサーで解析
+    import csv as csv_module
+    from io import StringIO as SIO
+
     in_tail = False
     for i, line in enumerate(lines):
         if "末尾別データ" in line:
@@ -113,75 +117,42 @@ def parse_anaslo(text):
             continue
 
         # ヘッダー行スキップ
-        if re.match(r"^末尾\t?末尾別", line) or line.strip() in ["末尾別データ","末尾\t末尾別差枚\t平均差枚\t平均G数\t勝率"]:
+        if re.match(r"^末尾.?末尾別", line) or "平均G数" in line:
             continue
 
-        # タブ区切りで分割
-        vals = re.split(r"[,\t]+", line.strip())
+        # 勝率を先に抽出
+        pct = re.search(r"([\d.]+)%\((\d+)/(\d+)\)", line)
+        wr = float(pct.group(1)) if pct else None
+        wc = int(pct.group(2)) if pct else None
+        tc = int(pct.group(3)) if pct else None
 
-        # タブがない場合は末尾キーで始まる行を探す
-        if len(vals) < 2:
-            # 「0--818-」のような結合行を分割
-            m = re.match(r"^([0-9]|ゾロ目)(.+)$", line)
-            if m:
-                tail = m.group(1)
-                rest = m.group(2)
-                # 数値・パーセントを抽出
-                nums = re.findall(r"[+\-]?[\d,]+(?:\.\d+)?|#ERROR!|-{1,2}", rest)
-                pct = re.search(r"([\d.]+)%\((\d+)/(\d+)\)", rest)
-                entry = {
-                    "tail": tail,
-                    "total_diff": clean_num(nums[0]) if len(nums) > 0 else None,
-                    "avg_diff": clean_num(nums[1]) if len(nums) > 1 else None,
-                    "avg_games": clean_num(nums[2]) if len(nums) > 2 else None,
-                    "win_rate": float(pct.group(1)) if pct else None,
-                    "win_count": int(pct.group(2)) if pct else None,
-                    "total_count": int(pct.group(3)) if pct else None,
-                }
-                result["tail_ranking"].append(entry)
+        # 勝率部分を除去してCSVパース（数値カンマを保持）
+        clean_line = re.sub(r"[\d.]+%\(\d+/\d+\)", "", line).rstrip(",")
+        try:
+            reader = csv_module.reader(SIO(clean_line))
+            vals = [v.strip() for v in next(reader)]
+        except:
             continue
 
-        if vals[0] in TAIL_KEYS:
-            td = clean_num(vals[1]) if len(vals) > 1 else None
-            ad = clean_num(vals[2]) if len(vals) > 2 else None
-            ag = clean_num(vals[3]) if len(vals) > 3 else None
-            wr_str = vals[4] if len(vals) > 4 else ""
-            wr, wc, tc = parse_winrate(wr_str)
-            result["tail_ranking"].append({
-                "tail": vals[0],
-                "total_diff": td,
-                "avg_diff": ad,
-                "avg_games": ag,
-                "win_rate": wr,
-                "win_count": wc,
-                "total_count": tc,
-            })
+        if not vals or vals[0] not in TAIL_KEYS:
+            continue
 
-    # 末尾データが取れなかった場合：全テキストから直接抽出
-    if len(result["tail_ranking"]) == 0:
-        full_text = text.replace("\r","")
-        tail_section = re.search(r"末尾別データ(.+?)詳細データ", full_text, re.DOTALL)
-        if tail_section:
-            section = tail_section.group(1)
-            for tail in TAIL_KEYS:
-                pattern = re.escape(tail) + r"\t([^\t\n]*)\t([^\t\n]*)\t([^\t\n]*)\t([^\t\n]*)"
-                m = re.search(pattern, section)
-                if m:
-                    td = clean_num(m.group(1))
-                    ad = clean_num(m.group(2))
-                    ag = clean_num(m.group(3))
-                    wr, wc, tc = parse_winrate(m.group(4))
-                    result["tail_ranking"].append({
-                        "tail": tail,
-                        "total_diff": td,
-                        "avg_diff": ad,
-                        "avg_games": ag,
-                        "win_rate": wr,
-                        "win_count": wc,
-                        "total_count": tc,
-                    })
+        # A=末尾 B=末尾別差枚 C=平均差枚 D=平均G数
+        td = clean_num(vals[1]) if len(vals) > 1 else None
+        ad = clean_num(vals[2]) if len(vals) > 2 else None
+        ag = clean_num(vals[3]) if len(vals) > 3 else None
 
-    return result
+        result["tail_ranking"].append({
+            "tail": vals[0],
+            "total_diff": td,
+            "avg_diff": ad,
+            "avg_games": ag,
+            "win_rate": wr,
+            "win_count": wc,
+            "total_count": tc,
+        })
+
+        return result
 
 def process_store(store):
     try:
