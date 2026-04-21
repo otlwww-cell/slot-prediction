@@ -6,392 +6,121 @@
 <title>設定6予測</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;700;900&family=Share+Tech+Mono&display=swap');
-
 :root {
-  --bg: #080c12;
-  --surface: #0f1520;
-  --card: #131d2e;
-  --border: #1a2840;
-  --accent: #00e5ff;
-  --accent2: #ff4444;
-  --gold: #ffd700;
-  --silver: #b0bec5;
-  --bronze: #cd7f32;
-  --green: #00e676;
-  --red: #ff5252;
-  --text: #e0e8f0;
-  --muted: #4a6080;
-  --hot: #ff6d00;
+  --bg:#080c12; --surface:#0f1520; --card:#131d2e; --border:#1a2840;
+  --accent:#00e5ff; --gold:#ffd700; --silver:#b0bec5; --bronze:#cd7f32;
+  --green:#00e676; --red:#ff5252; --text:#e0e8f0; --muted:#4a6080; --hot:#ff6d00;
 }
-
-* { margin:0; padding:0; box-sizing:border-box; }
-
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: 'Zen Kaku Gothic New', sans-serif;
-  min-height: 100vh;
-  background-image:
-    radial-gradient(ellipse at 20% 0%, rgba(0,229,255,0.04) 0%, transparent 60%),
-    radial-gradient(ellipse at 80% 100%, rgba(255,68,68,0.03) 0%, transparent 60%);
-}
-
-/* ヘッダー */
-header {
-  background: rgba(8,12,18,0.95);
-  border-bottom: 1px solid var(--border);
-  padding: 14px 16px;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  backdrop-filter: blur(12px);
-}
-.header-inner {
-  max-width: 800px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.header-title {
-  font-size: 1rem;
-  font-weight: 900;
-  color: var(--accent);
-  letter-spacing: 0.08em;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-.header-title::before {
-  content: "◆";
-  color: var(--hot);
-  font-size: 0.7rem;
-}
-.header-updated {
-  font-family: 'Share Tech Mono', monospace;
-  font-size: 0.65rem;
-  color: var(--muted);
-}
-
-/* タブ */
-.tab-bar {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 12px 16px 0;
-  display: flex;
-  gap: 6px;
-}
-.tab-btn {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  color: var(--muted);
-  padding: 8px 16px;
-  border-radius: 8px 8px 0 0;
-  font-size: 0.78rem;
-  font-family: 'Zen Kaku Gothic New', sans-serif;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.2s;
-  border-bottom: none;
-}
-.tab-btn.active {
-  background: var(--card);
-  color: var(--accent);
-  border-color: var(--accent);
-  border-bottom: 1px solid var(--card);
-}
-
-/* メイン */
-main {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 16px 40px;
-}
-
-/* ストアセレクター */
-.store-selector {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
-  padding: 12px 0;
-  border-bottom: 1px solid var(--border);
-  margin-bottom: 16px;
-}
-.store-btn {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  color: var(--muted);
-  padding: 5px 12px;
-  border-radius: 20px;
-  font-size: 0.72rem;
-  font-family: 'Zen Kaku Gothic New', sans-serif;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-.store-btn.active {
-  border-color: var(--accent);
-  color: var(--accent);
-  background: rgba(0,229,255,0.08);
-}
-
-/* セクションタイトル */
-.section-label {
-  font-size: 0.62rem;
-  color: var(--muted);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  margin-bottom: 8px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.section-label::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: var(--border);
-}
-
-/* 全体データカード */
-.total-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 14px 16px;
-  margin-bottom: 16px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 12px;
-}
-.total-item .label {
-  font-size: 0.6rem;
-  color: var(--muted);
-  letter-spacing: 0.05em;
-}
-.total-item .value {
-  font-family: 'Share Tech Mono', monospace;
-  font-size: 1.1rem;
-  font-weight: 700;
-  margin-top: 2px;
-}
-.value.pos { color: var(--green); }
-.value.neg { color: var(--red); }
-.value.neu { color: var(--accent); }
-
-/* 機種ランキング */
-.machine-list {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-bottom: 24px;
-}
-.machine-item {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 11px 14px;
-  display: grid;
-  grid-template-columns: 28px 1fr auto;
-  align-items: center;
-  gap: 10px;
-  transition: all 0.15s;
-}
-.machine-item:hover {
-  border-color: rgba(0,229,255,0.3);
-  transform: translateX(2px);
-}
-.machine-item.rank-1 { border-left: 3px solid var(--gold); }
-.machine-item.rank-2 { border-left: 3px solid var(--silver); }
-.machine-item.rank-3 { border-left: 3px solid var(--bronze); }
-.machine-item.hot { border-left: 3px solid var(--hot); }
-.machine-item.normal { border-left: 3px solid var(--border); }
-
-.rank-num {
-  font-family: 'Share Tech Mono', monospace;
-  font-size: 0.9rem;
-  font-weight: 700;
-  text-align: center;
-  color: var(--muted);
-}
-.rank-1 .rank-num { color: var(--gold); }
-.rank-2 .rank-num { color: var(--silver); }
-.rank-3 .rank-num { color: var(--bronze); }
-
-.machine-name {
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: var(--text);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.machine-sub {
-  font-size: 0.65rem;
-  color: var(--muted);
-  margin-top: 2px;
-  display: flex;
-  gap: 8px;
-}
-.machine-right {
-  text-align: right;
-  min-width: 70px;
-}
-.diff-big {
-  font-family: 'Share Tech Mono', monospace;
-  font-size: 0.95rem;
-  font-weight: 700;
-}
-.diff-big.pos { color: var(--green); }
-.diff-big.neg { color: var(--red); }
-.win-badge {
-  font-size: 0.62rem;
-  color: var(--muted);
-  margin-top: 2px;
-  font-family: 'Share Tech Mono', monospace;
-}
-.hot-badge {
-  display: inline-block;
-  background: var(--hot);
-  color: #fff;
-  font-size: 0.55rem;
-  padding: 1px 5px;
-  border-radius: 3px;
-  margin-left: 4px;
-  font-weight: 900;
-  letter-spacing: 0.05em;
-}
-
-/* 末尾ランキング */
-.tail-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-  margin-bottom: 24px;
-}
-.tail-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 12px;
-  text-align: center;
-  transition: all 0.15s;
-}
-.tail-card.hot {
-  border-color: var(--hot);
-  background: rgba(255,109,0,0.08);
-}
-.tail-card.good {
-  border-color: rgba(0,230,118,0.4);
-  background: rgba(0,230,118,0.05);
-}
-.tail-num {
-  font-family: 'Share Tech Mono', monospace;
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--accent);
-}
-.tail-card.hot .tail-num { color: var(--hot); }
-.tail-card.good .tail-num { color: var(--green); }
-.tail-diff {
-  font-family: 'Share Tech Mono', monospace;
-  font-size: 0.78rem;
-  font-weight: 700;
-  margin-top: 3px;
-}
-.tail-wr {
-  font-size: 0.6rem;
-  color: var(--muted);
-  margin-top: 2px;
-  font-family: 'Share Tech Mono', monospace;
-}
-.tail-none {
-  font-size: 0.7rem;
-  color: var(--muted);
-  margin-top: 8px;
-}
-
-/* 空状態 */
-.empty {
-  text-align: center;
-  padding: 60px 20px;
-  color: var(--muted);
-  font-size: 0.85rem;
-}
-
-/* パネル */
-.panel { display: none; }
-.panel.active { display: block; }
-
-@media (max-width: 480px) {
-  .tail-grid { grid-template-columns: repeat(3, 1fr); }
-  .machine-name { font-size: 0.76rem; }
-}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Zen Kaku Gothic New',sans-serif;min-height:100vh;}
+header{background:rgba(8,12,18,0.95);border-bottom:1px solid var(--border);padding:14px 16px;position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+.header-inner{max-width:800px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;}
+.header-title{font-size:1rem;font-weight:900;color:var(--accent);letter-spacing:.08em;}
+.header-title::before{content:"◆";color:var(--hot);font-size:.7rem;margin-right:6px;}
+.header-updated{font-family:'Share Tech Mono',monospace;font-size:.65rem;color:var(--muted);}
+.tab-bar{max-width:800px;margin:0 auto;padding:12px 16px 0;display:flex;gap:6px;}
+.tab-btn{background:var(--surface);border:1px solid var(--border);color:var(--muted);padding:8px 16px;border-radius:8px 8px 0 0;font-size:.78rem;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;cursor:pointer;transition:all .2s;border-bottom:none;}
+.tab-btn.active{background:var(--card);color:var(--accent);border-color:var(--accent);border-bottom:1px solid var(--card);}
+main{max-width:800px;margin:0 auto;padding:0 16px 40px;}
+.store-selector{display:flex;gap:6px;flex-wrap:wrap;padding:12px 0;border-bottom:1px solid var(--border);margin-bottom:16px;}
+.store-btn{background:var(--surface);border:1px solid var(--border);color:var(--muted);padding:5px 12px;border-radius:20px;font-size:.72rem;font-family:'Zen Kaku Gothic New',sans-serif;cursor:pointer;transition:all .2s;}
+.store-btn.active{border-color:var(--accent);color:var(--accent);background:rgba(0,229,255,.08);}
+.section-label{font-size:.62rem;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;margin:16px 0 8px;display:flex;align-items:center;gap:8px;}
+.section-label::after{content:'';flex:1;height:1px;background:var(--border);}
+.total-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;margin-bottom:4px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;}
+.total-item .label{font-size:.6rem;color:var(--muted);}
+.total-item .value{font-family:'Share Tech Mono',monospace;font-size:1.1rem;font-weight:700;margin-top:2px;}
+.log-badge{display:inline-block;background:rgba(0,229,255,.1);border:1px solid rgba(0,229,255,.2);color:var(--accent);font-size:.65rem;padding:3px 10px;border-radius:20px;margin-bottom:12px;font-family:'Share Tech Mono',monospace;}
+.machine-list{display:flex;flex-direction:column;gap:6px;margin-bottom:8px;}
+.machine-item{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:11px 14px;display:grid;grid-template-columns:28px 1fr auto;align-items:center;gap:10px;transition:all .15s;}
+.machine-item:hover{border-color:rgba(0,229,255,.3);transform:translateX(2px);}
+.machine-item.rank-1{border-left:3px solid var(--gold);}
+.machine-item.rank-2{border-left:3px solid var(--silver);}
+.machine-item.rank-3{border-left:3px solid var(--bronze);}
+.machine-item.hot{border-left:3px solid var(--hot);}
+.machine-item.normal{border-left:3px solid var(--border);}
+.rank-num{font-family:'Share Tech Mono',monospace;font-size:.9rem;font-weight:700;text-align:center;color:var(--muted);}
+.rank-1 .rank-num{color:var(--gold);} .rank-2 .rank-num{color:var(--silver);} .rank-3 .rank-num{color:var(--bronze);}
+.machine-name{font-size:.82rem;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.machine-sub{font-size:.65rem;color:var(--muted);margin-top:2px;display:flex;gap:8px;}
+.machine-right{text-align:right;min-width:70px;}
+.diff-big{font-family:'Share Tech Mono',monospace;font-size:.95rem;font-weight:700;}
+.diff-big.pos{color:var(--green);} .diff-big.neg{color:var(--red);} .diff-big.neu{color:var(--muted);}
+.win-badge{font-size:.62rem;color:var(--muted);margin-top:2px;font-family:'Share Tech Mono',monospace;}
+.hot-badge{display:inline-block;background:var(--hot);color:#fff;font-size:.55rem;padding:1px 5px;border-radius:3px;margin-left:4px;font-weight:900;}
+.pred-badge{display:inline-block;background:rgba(0,230,118,.15);border:1px solid rgba(0,230,118,.3);color:var(--green);font-size:.55rem;padding:1px 5px;border-radius:3px;margin-left:4px;font-weight:900;}
+.tail-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px;}
+.tail-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px;text-align:center;}
+.tail-card.hot{border-color:var(--hot);background:rgba(255,109,0,.08);}
+.tail-card.good{border-color:rgba(0,230,118,.4);background:rgba(0,230,118,.05);}
+.tail-num{font-family:'Share Tech Mono',monospace;font-size:1.4rem;font-weight:700;color:var(--accent);}
+.tail-card.hot .tail-num{color:var(--hot);} .tail-card.good .tail-num{color:var(--green);}
+.tail-diff{font-family:'Share Tech Mono',monospace;font-size:.78rem;font-weight:700;margin-top:3px;}
+.tail-wr{font-size:.6rem;color:var(--muted);margin-top:2px;font-family:'Share Tech Mono',monospace;}
+.panel{display:none;} .panel.active{display:block;}
+.empty{text-align:center;padding:40px 20px;color:var(--muted);font-size:.85rem;}
+.pred-note{font-size:.65rem;color:var(--muted);text-align:center;padding:8px;margin-bottom:8px;}
+.pos{color:var(--green);} .neg{color:var(--red);} .neu{color:var(--muted);}
 </style>
 </head>
 <body>
-
 <header>
   <div class="header-inner">
     <div class="header-title">設定6予測</div>
     <div class="header-updated" id="updated">読み込み中...</div>
   </div>
 </header>
-
 <div class="tab-bar">
-  <button class="tab-btn active" onclick="switchTab('machine', this)">🔥 機種別</button>
-  <button class="tab-btn" onclick="switchTab('tail', this)">🎰 末尾別</button>
+  <button class="tab-btn active" onclick="switchTab('today',this)">📊 今日</button>
+  <button class="tab-btn" onclick="switchTab('predict',this)">🔮 予測</button>
+  <button class="tab-btn" onclick="switchTab('tail',this)">🎰 末尾</button>
 </div>
-
 <main>
   <div class="store-selector" id="store-selector"></div>
-
-  <!-- 機種別パネル -->
-  <div class="panel active" id="panel-machine">
+  <div class="panel active" id="panel-today">
     <div id="total-area"></div>
-    <div class="section-label">機種別ランキング</div>
-    <div class="machine-list" id="machine-list">
-      <div class="empty">データ読み込み中...</div>
-    </div>
+    <div class="section-label">今日の機種別ランキング</div>
+    <div class="machine-list" id="machine-list"><div class="empty">読み込み中...</div></div>
   </div>
-
-  <!-- 末尾別パネル -->
+  <div class="panel" id="panel-predict">
+    <div id="pred-log-badge"></div>
+    <div class="section-label">過去データから見た熱い機種</div>
+    <div class="machine-list" id="pred-machine-list"><div class="empty">読み込み中...</div></div>
+  </div>
   <div class="panel" id="panel-tail">
-    <div class="section-label" style="margin-top:12px">末尾別データ</div>
-    <div class="tail-grid" id="tail-grid">
-      <div class="empty" style="grid-column:1/-1">データ読み込み中...</div>
-    </div>
+    <div id="tail-log-badge"></div>
+    <div class="section-label">今日の末尾別</div>
+    <div class="tail-grid" id="tail-today-grid"></div>
+    <div class="section-label">過去データ平均勝率</div>
+    <div class="tail-grid" id="tail-pred-grid"></div>
   </div>
 </main>
-
 <script>
-let allData = null;
-let currentStore = 0;
-let currentTab = 'machine';
+let allData=null, currentStore=0, currentTab='today';
 
-async function loadData() {
-  try {
-    const res = await fetch('data.json?t=' + Date.now());
-    allData = await res.json();
-    document.getElementById('updated').textContent = '更新: ' + allData.updated;
+async function loadData(){
+  try{
+    const res=await fetch('data.json?t='+Date.now());
+    allData=await res.json();
+    document.getElementById('updated').textContent='更新: '+allData.updated;
     buildStoreSelector();
     render();
-  } catch(e) {
-    document.getElementById('machine-list').innerHTML =
-      '<div class="empty">データの読み込みに失敗しました</div>';
+  }catch(e){
+    document.getElementById('machine-list').innerHTML='<div class="empty">データ読み込み失敗</div>';
   }
 }
 
-function buildStoreSelector() {
-  const stores = allData.stores || [];
-  const sel = document.getElementById('store-selector');
-  sel.innerHTML = '';
-  stores.forEach((s, i) => {
-    const btn = document.createElement('button');
-    btn.className = 'store-btn' + (i === currentStore ? ' active' : '');
-    btn.textContent = s.store || s.name || `店舗${i+1}`;
-    btn.onclick = () => {
-      currentStore = i;
-      document.querySelectorAll('.store-btn').forEach(b => b.classList.remove('active'));
+function buildStoreSelector(){
+  const stores=allData.stores||[];
+  const sel=document.getElementById('store-selector');
+  sel.innerHTML='';
+  stores.forEach((s,i)=>{
+    const btn=document.createElement('button');
+    btn.className='store-btn'+(i===currentStore?' active':'');
+    btn.textContent=s.store||`店舗${i+1}`;
+    btn.onclick=()=>{
+      currentStore=i;
+      document.querySelectorAll('.store-btn').forEach(b=>b.classList.remove('active'));
       btn.classList.add('active');
       render();
     };
@@ -399,114 +128,125 @@ function buildStoreSelector() {
   });
 }
 
-function switchTab(tab, btn) {
-  currentTab = tab;
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+function switchTab(tab,btn){
+  currentTab=tab;
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
-  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
-  document.getElementById('panel-' + tab).classList.add('active');
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.getElementById('panel-'+tab).classList.add('active');
 }
 
-function fmtDiff(val) {
-  if (val === null || val === undefined) return '-';
-  const n = Number(val);
-  return (n >= 0 ? '+' : '') + n.toLocaleString();
+function fmtDiff(val){
+  if(val===null||val===undefined)return'-';
+  const n=Number(val);
+  return(n>=0?'+':'')+n.toLocaleString();
+}
+function diffClass(val){
+  if(val===null||val===undefined)return'neu';
+  return Number(val)>=0?'pos':'neg';
 }
 
-function diffClass(val) {
-  if (val === null || val === undefined) return 'neu';
-  return Number(val) >= 0 ? 'pos' : 'neg';
-}
-
-function render() {
-  if (!allData || !allData.stores || allData.stores.length === 0) return;
-  const store = allData.stores[currentStore];
-  if (!store) return;
+function render(){
+  if(!allData||!allData.stores||allData.stores.length===0)return;
+  const store=allData.stores[currentStore];
+  if(!store)return;
 
   // 全体データ
-  const totalArea = document.getElementById('total-area');
-  const t = store.total || {};
-  if (t.総差枚 !== undefined) {
-    totalArea.innerHTML = `
-      <div class="total-card">
-        <div class="total-item">
-          <div class="label">総差枚</div>
-          <div class="value ${diffClass(t.総差枚)}">${fmtDiff(t.総差枚)}</div>
-        </div>
-        <div class="total-item">
-          <div class="label">平均差枚</div>
-          <div class="value ${diffClass(t.平均差枚)}">${fmtDiff(t.平均差枚)}</div>
-        </div>
-        <div class="total-item">
-          <div class="label">勝率</div>
-          <div class="value neu">${t.勝率 || '-'}</div>
-        </div>
-      </div>`;
-  } else {
-    totalArea.innerHTML = '';
-  }
+  const t=store.total||{};
+  const totalArea=document.getElementById('total-area');
+  if(t.総差枚!==undefined){
+    totalArea.innerHTML=`<div class="total-card">
+      <div class="total-item"><div class="label">総差枚</div><div class="value ${diffClass(t.総差枚)}">${fmtDiff(t.総差枚)}</div></div>
+      <div class="total-item"><div class="label">平均差枚</div><div class="value ${diffClass(t.平均差枚)}">${fmtDiff(t.平均差枚)}</div></div>
+      <div class="total-item"><div class="label">勝率</div><div class="value neu">${t.勝率||'-'}</div></div>
+    </div>`;
+  }else{totalArea.innerHTML='';}
 
-  // 機種別ランキング
-  const machines = store.machine_ranking || [];
-  const machineList = document.getElementById('machine-list');
-  if (machines.length === 0) {
-    machineList.innerHTML = '<div class="empty">データなし</div>';
-  } else {
-    machineList.innerHTML = machines.map(m => {
-      const rankClass = m.rank === 1 ? 'rank-1' : m.rank === 2 ? 'rank-2' : m.rank === 3 ? 'rank-3' : m.rank <= 5 ? 'hot' : 'normal';
-      const rankLabel = m.rank <= 3 ? ['🥇','🥈','🥉'][m.rank-1] : m.rank;
-      const isHot = m.win_rate && m.win_rate >= 66.7;
-      const hotBadge = isHot ? '<span class="hot-badge">熱</span>' : '';
-      const wr = m.win_rate ? `${m.win_rate}% (${m.win_count}/${m.total_count})` : '-';
-      const avgG = m.avg_games ? Math.round(m.avg_games).toLocaleString() + 'G' : '-';
-      return `
-        <div class="machine-item ${rankClass}">
-          <div class="rank-num">${rankLabel}</div>
-          <div>
-            <div class="machine-name">${m.machine}${hotBadge}</div>
-            <div class="machine-sub">
-              <span>勝率 ${wr}</span>
-              <span>平均 ${avgG}</span>
-            </div>
-          </div>
-          <div class="machine-right">
-            <div class="diff-big ${diffClass(m.total_diff)}">${fmtDiff(m.total_diff)}</div>
-            <div class="win-badge">avg ${fmtDiff(m.avg_diff)}</div>
-          </div>
-        </div>`;
+  // 今日の機種別
+  const machines=(store.today||{}).machine_ranking||[];
+  const ml=document.getElementById('machine-list');
+  ml.innerHTML=machines.length===0?'<div class="empty">データなし</div>':machines.map(m=>{
+    const rc=m.rank===1?'rank-1':m.rank===2?'rank-2':m.rank===3?'rank-3':m.rank<=5?'hot':'normal';
+    const rl=m.rank<=3?['🥇','🥈','🥉'][m.rank-1]:m.rank;
+    const isHot=m.win_rate&&m.win_rate>=66.7;
+    const badge=isHot?'<span class="hot-badge">熱</span>':'';
+    const wr=m.win_rate?`${m.win_rate}%(${m.win_count}/${m.total_count})`:'-';
+    const ag=m.avg_games?Math.round(m.avg_games).toLocaleString()+'G':'-';
+    return`<div class="machine-item ${rc}">
+      <div class="rank-num">${rl}</div>
+      <div><div class="machine-name">${m.machine}${badge}</div>
+      <div class="machine-sub"><span>勝率 ${wr}</span><span>平均 ${ag}</span></div></div>
+      <div class="machine-right">
+        <div class="diff-big ${diffClass(m.total_diff)}">${fmtDiff(m.total_diff)}</div>
+        <div class="win-badge">avg ${fmtDiff(m.avg_diff)}</div>
+      </div></div>`;
+  }).join('');
+
+  // 予測タブ
+  const pred=store.prediction||{};
+  const logCount=pred.log_count||0;
+  document.getElementById('pred-log-badge').innerHTML=
+    `<div class="log-badge">蓄積データ: ${logCount}日分${logCount<14?' (精度向上中)':''}</div>`;
+
+  const pml=document.getElementById('pred-machine-list');
+  const pm=pred.machine_scores||[];
+  if(logCount<3){
+    pml.innerHTML='<div class="empty">データ蓄積中です（3日分以上で表示）</div>';
+  }else{
+    pml.innerHTML=pm.length===0?'<div class="empty">データなし</div>':pm.map((m,i)=>{
+      const rc=i===0?'rank-1':i===1?'rank-2':i===2?'rank-3':i<5?'hot':'normal';
+      const rl=i<=2?['🥇','🥈','🥉'][i]:i+1;
+      return`<div class="machine-item ${rc}">
+        <div class="rank-num">${rl}</div>
+        <div><div class="machine-name">${m.machine}<span class="pred-badge">予測</span></div>
+        <div class="machine-sub"><span>熱率 ${m.hot_rate}%</span><span>${m.days}日分</span></div></div>
+        <div class="machine-right">
+          <div class="diff-big ${m.avg_diff>=0?'pos':'neg'}">${fmtDiff(m.avg_diff)}</div>
+          <div class="win-badge">平均差枚/日</div>
+        </div></div>`;
     }).join('');
   }
 
-  // 末尾別
-  const tails = store.tail_ranking || [];
-  const tailGrid = document.getElementById('tail-grid');
-  if (tails.length === 0) {
-    tailGrid.innerHTML = '<div class="empty" style="grid-column:1/-1">データなし</div>';
-  } else {
-    // 差枚でソート（データありのみ）
-    const sorted = [...tails].sort((a,b) => {
-      if (a.total_diff === null) return 1;
-      if (b.total_diff === null) return -1;
-      return b.total_diff - a.total_diff;
+  // 末尾タブ：今日
+  const tails=(store.today||{}).tail_ranking||[];
+  const tg=document.getElementById('tail-today-grid');
+  if(tails.length===0){
+    tg.innerHTML='<div class="empty" style="grid-column:1/-1">データなし</div>';
+  }else{
+    const sorted=[...tails].sort((a,b)=>{
+      if(a.win_rate===null)return 1;
+      if(b.win_rate===null)return-1;
+      return b.win_rate-a.win_rate;
     });
-    tailGrid.innerHTML = sorted.map((t, i) => {
-      const hasDiff = t.total_diff !== null;
-      const hasWr = t.win_rate !== null;
-      const hasGames = t.avg_games !== null && t.avg_games > 0 && t.avg_games < 100000;
-      // 勝率が取れているものを「データあり」と判定
-      const hasData = hasWr || hasDiff;
-      const cardClass = !hasData ? '' : i === 0 ? 'hot' : i <= 2 ? 'good' : '';
-      const diffStr = hasDiff ? fmtDiff(t.total_diff) : '-';
-      const diffCls = hasDiff ? diffClass(t.total_diff) : 'neu';
-      const wr = t.win_rate ? `${t.win_rate}%` : '-';
-      const avgG = hasGames ? Math.round(t.avg_games).toLocaleString() + 'G' : '-';
-      return `
-        <div class="tail-card ${cardClass}">
-          <div class="tail-num">末尾${t.tail}</div>
-          <div class="tail-diff ${diffCls}">${diffStr}</div>
-          <div class="tail-wr">勝率 ${wr}</div>
-          <div class="tail-wr">平均 ${avgG}</div>
-        </div>`;
+    tg.innerHTML=sorted.map((t,i)=>{
+      const hasWr=t.win_rate!==null;
+      const cc=!hasWr?'':i===0?'hot':i<=2?'good':'';
+      const ag=t.avg_games&&t.avg_games>0&&t.avg_games<100000?Math.round(t.avg_games).toLocaleString()+'G':'-';
+      return`<div class="tail-card ${cc}">
+        <div class="tail-num">末尾${t.tail}</div>
+        <div class="tail-diff ${diffClass(t.total_diff)}">${fmtDiff(t.total_diff)}</div>
+        <div class="tail-wr">勝率 ${t.win_rate!==null?t.win_rate+'%':'-'}</div>
+        <div class="tail-wr">平均 ${ag}</div>
+      </div>`;
+    }).join('');
+  }
+
+  // 末尾タブ：予測
+  const predTails=pred.tail_scores||[];
+  document.getElementById('tail-log-badge').innerHTML=
+    `<div class="log-badge">蓄積データ: ${logCount}日分</div>`;
+  const ptg=document.getElementById('tail-pred-grid');
+  if(logCount<3||predTails.length===0){
+    ptg.innerHTML='<div class="empty" style="grid-column:1/-1">データ蓄積中</div>';
+  }else{
+    ptg.innerHTML=predTails.map((t,i)=>{
+      const cc=i===0?'hot':i<=2?'good':'';
+      return`<div class="tail-card ${cc}">
+        <div class="tail-num">末尾${t.tail}</div>
+        <div class="tail-diff neu">avg</div>
+        <div class="tail-wr">勝率 ${t.avg_win_rate}%</div>
+        <div class="tail-wr">${t.days}日分</div>
+      </div>`;
     }).join('');
   }
 }
