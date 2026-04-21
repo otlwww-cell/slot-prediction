@@ -2,7 +2,7 @@ name: Daily Score Update
 
 on:
   schedule:
-    - cron: '0 14 * * *'
+    - cron: '0 14 * * *'  # 毎日23時JST
   workflow_dispatch:
 
 jobs:
@@ -19,7 +19,7 @@ jobs:
           python-version: '3.11'
 
       - name: 必要なライブラリをインストール
-        run: pip install pandas requests
+        run: pip install requests
 
       - name: スコア計算を実行
         run: python score.py
