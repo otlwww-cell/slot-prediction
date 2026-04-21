@@ -490,12 +490,16 @@ function render() {
       return b.total_diff - a.total_diff;
     });
     tailGrid.innerHTML = sorted.map((t, i) => {
-      const hasData = t.total_diff !== null;
+      const hasDiff = t.total_diff !== null;
+      const hasWr = t.win_rate !== null;
+      const hasGames = t.avg_games !== null && t.avg_games > 0 && t.avg_games < 100000;
+      // 勝率が取れているものを「データあり」と判定
+      const hasData = hasWr || hasDiff;
       const cardClass = !hasData ? '' : i === 0 ? 'hot' : i <= 2 ? 'good' : '';
-      const diffStr = hasData ? fmtDiff(t.total_diff) : 'データなし';
-      const diffCls = hasData ? diffClass(t.total_diff) : 'neu';
+      const diffStr = hasDiff ? fmtDiff(t.total_diff) : '-';
+      const diffCls = hasDiff ? diffClass(t.total_diff) : 'neu';
       const wr = t.win_rate ? `${t.win_rate}%` : '-';
-      const avgG = t.avg_games ? Math.round(t.avg_games).toLocaleString() + 'G' : '-';
+      const avgG = hasGames ? Math.round(t.avg_games).toLocaleString() + 'G' : '-';
       return `
         <div class="tail-card ${cardClass}">
           <div class="tail-num">末尾${t.tail}</div>
