@@ -1,0 +1,194 @@
+{
+  "store": "将軍葛西店",
+  "date": "2026/04/14",
+  "total": {
+    "総差枚": 5076.0,
+    "平均差枚": 2538.0,
+    "勝率": "50.0%(1/2)"
+  },
+  "machine_ranking": [
+    {
+      "rank": 1,
+      "machine": "ダーリン・イン・ザ・フランキス",
+      "total_diff": 5.0,
+      "avg_diff": 76.0,
+      "avg_games": 2.0,
+      "win_rate": 50.0,
+      "win_count": 1,
+      "total_count": 2
+    },
+    {
+      "rank": 2,
+      "machine": "からくりサーカス",
+      "total_diff": 1.0,
+      "avg_diff": 550.0,
+      "avg_games": 388.0,
+      "win_rate": 50.0,
+      "win_count": 2,
+      "total_count": 4
+    },
+    {
+      "rank": 3,
+      "machine": "スマスロ炎炎ノ消防隊",
+      "total_diff": 1.0,
+      "avg_diff": 316.0,
+      "avg_games": 658.0,
+      "win_rate": 100.0,
+      "win_count": 2,
+      "total_count": 2
+    },
+    {
+      "rank": 4,
+      "machine": "東京喰種",
+      "total_diff": 765.0,
+      "avg_diff": 191.0,
+      "avg_games": 706.0,
+      "win_rate": 25.0,
+      "win_count": 1,
+      "total_count": 4
+    },
+    {
+      "rank": 5,
+      "machine": "ディスクアップ2",
+      "total_diff": 721.0,
+      "avg_diff": 180.0,
+      "avg_games": 2.0,
+      "win_rate": 25.0,
+      "win_count": 1,
+      "total_count": 4
+    },
+    {
+      "rank": 6,
+      "machine": "北斗の拳 転生の章2",
+      "total_diff": 716.0,
+      "avg_diff": 143.0,
+      "avg_games": 475.0,
+      "win_rate": 40.0,
+      "win_count": 2,
+      "total_count": 5
+    },
+    {
+      "rank": 7,
+      "machine": "ヱヴァンゲリヲン ～約束の扉～",
+      "total_diff": 647.0,
+      "avg_diff": 324.0,
+      "avg_games": 891.0,
+      "win_rate": 50.0,
+      "win_count": 1,
+      "total_count": 2
+    },
+    {
+      "rank": 8,
+      "machine": "いざ！番長",
+      "total_diff": 590.0,
+      "avg_diff": 295.0,
+      "avg_games": 204.0,
+      "win_rate": 50.0,
+      "win_count": 1,
+      "total_count": 2
+    },
+    {
+      "rank": 9,
+      "machine": "化物語",
+      "total_diff": 219.0,
+      "avg_diff": 110.0,
+      "avg_games": 224.0,
+      "win_rate": 50.0,
+      "win_count": 1,
+      "total_count": 2
+    },
+    {
+      "rank": 10,
+      "machine": "アイムジャグラーEX-TP",
+      "total_diff": 165.0,
+      "avg_diff": 18.0,
+      "avg_games": 463.0,
+      "win_rate": 11.1,
+      "win_count": 1,
+      "total_count": 9
+    }
+  ],
+  "tail_ranking": [
+    {
+      "tail": "0",
+      "total_diff": null,
+      "avg_diff": null,
+      "avg_games": 761.0,
+      "win_rate": null,
+      "win_count": null,
+      "total_count": null
+    },
+    {
+      "tail": "1",
+      "total_diff": null,
+      "avg_diff": null,
+      "avg_games": 416.0,
+      "win_rate": null,
+      "win_count": null,
+      "total_count": null
+    },
+    {
+      "tail": "2",
+      "total_diff": null,
+      "avg_diff": null,
+      "avg_games": 658.0,
+      "win_rate": null,
+      "win_count": null,
+      "total_count": null
+    },
+    {
+      "tail": "3",
+      "total_diff": 6412.0,
+      "avg_diff": 337.0,
+      "avg_games": 481.0,
+      "win_rate": 36.8,
+      "win_count": 7,
+      "total_count": 19
+    },
+    {
+      "tail": "5",
+      "total_diff": null,
+      "avg_diff": null,
+      "avg_games": 424.0,
+      "win_rate": null,
+      "win_count": null,
+      "total_count": null
+    },
+    {
+      "tail": "6",
+      "total_diff": 2051.0,
+      "avg_diff": 108.0,
+      "avg_games": 521.0,
+      "win_rate": 31.6,
+      "win_count": 6,
+      "total_count": 19
+    },
+    {
+      "tail": "7",
+      "total_diff": null,
+      "avg_diff": null,
+      "avg_games": 851.0,
+      "win_rate": null,
+      "win_count": null,
+      "total_count": null
+    },
+    {
+      "tail": "8",
+      "total_diff": 5621.0,
+      "avg_diff": 281.0,
+      "avg_games": 589.0,
+      "win_rate": 25.0,
+      "win_count": 5,
+      "total_count": 20
+    },
+    {
+      "tail": "ゾロ目",
+      "total_diff": 1267.0,
+      "avg_diff": 67.0,
+      "avg_games": 799.0,
+      "win_rate": 21.1,
+      "win_count": 4,
+      "total_count": 19
+    }
+  ]
+}
