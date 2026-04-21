@@ -124,9 +124,12 @@ def parse_anaslo(text):
             continue
 
         if not row or row[0].strip() not in TAIL_KEYS:
+            if row and row[0].strip() and "末尾" not in row[0] and "平均" not in row[0]:
+                print(f"  [DEBUG tail skip] {row[:3]}")
             continue
 
         tail = row[0].strip()
+        print(f"  [DEBUG tail hit] {tail}: {row}")
         td = clean_num(row[1]) if len(row) > 1 else None
         ad = clean_num(row[2]) if len(row) > 2 else None
         ag = clean_num(row[3]) if len(row) > 3 else None
