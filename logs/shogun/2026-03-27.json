@@ -1,0 +1,204 @@
+{
+  "store": "将軍葛西店",
+  "date": "2026/03/27",
+  "total": {
+    "総差枚": 4775.0,
+    "平均差枚": 2388.0,
+    "勝率": "100.0%(2/2)"
+  },
+  "machine_ranking": [
+    {
+      "rank": 1,
+      "machine": "甲鉄城のカバネリ 海門(うなと)決戦",
+      "total_diff": 4.0,
+      "avg_diff": 775.0,
+      "avg_games": 2.0,
+      "win_rate": 100.0,
+      "win_count": 2,
+      "total_count": 2
+    },
+    {
+      "rank": 2,
+      "machine": "戦国乙女4 戦乱に閃く炯眼の軍師",
+      "total_diff": 4.0,
+      "avg_diff": 476.0,
+      "avg_games": 1.0,
+      "win_rate": 66.7,
+      "win_count": 2,
+      "total_count": 3
+    },
+    {
+      "rank": 3,
+      "machine": "ゴッドイーター リザレクション",
+      "total_diff": 3.0,
+      "avg_diff": 607.0,
+      "avg_games": 1.0,
+      "win_rate": 33.3,
+      "win_count": 1,
+      "total_count": 3
+    },
+    {
+      "rank": 4,
+      "machine": "新ハナビ",
+      "total_diff": 2.0,
+      "avg_diff": 123.0,
+      "avg_games": 531.0,
+      "win_rate": 50.0,
+      "win_count": 2,
+      "total_count": 4
+    },
+    {
+      "rank": 5,
+      "machine": "炎炎ノ消防隊",
+      "total_diff": 1.0,
+      "avg_diff": 924.0,
+      "avg_games": 962.0,
+      "win_rate": 50.0,
+      "win_count": 1,
+      "total_count": 2
+    },
+    {
+      "rank": 6,
+      "machine": "スマスロ北斗の拳",
+      "total_diff": 936.0,
+      "avg_diff": 156.0,
+      "avg_games": 90.0,
+      "win_rate": 33.3,
+      "win_count": 2,
+      "total_count": 6
+    },
+    {
+      "rank": 7,
+      "machine": "吉宗(スマスロ)",
+      "total_diff": 857.0,
+      "avg_diff": 214.0,
+      "avg_games": 230.0,
+      "win_rate": 25.0,
+      "win_count": 1,
+      "total_count": 4
+    },
+    {
+      "rank": 8,
+      "machine": "ゴーゴージャグラー3",
+      "total_diff": 857.0,
+      "avg_diff": 286.0,
+      "avg_games": 1.0,
+      "win_rate": 66.7,
+      "win_count": 2,
+      "total_count": 3
+    },
+    {
+      "rank": 9,
+      "machine": "アナザーゴッドハーデス‐解き放たれし槍撃ver.‐",
+      "total_diff": 446.0,
+      "avg_diff": 149.0,
+      "avg_games": 266.0,
+      "win_rate": 33.3,
+      "win_count": 1,
+      "total_count": 3
+    },
+    {
+      "rank": 10,
+      "machine": "ディスクアップ2",
+      "total_diff": 73.0,
+      "avg_diff": 18.0,
+      "avg_games": 2.0,
+      "win_rate": 50.0,
+      "win_count": 2,
+      "total_count": 4
+    },
+    {
+      "rank": 11,
+      "machine": "押忍！番長4",
+      "total_diff": 57.0,
+      "avg_diff": 28.0,
+      "avg_games": 544.0,
+      "win_rate": 50.0,
+      "win_count": 1,
+      "total_count": 2
+    }
+  ],
+  "tail_ranking": [
+    {
+      "tail": "0",
+      "total_diff": null,
+      "avg_diff": null,
+      "avg_games": 720.0,
+      "win_rate": null,
+      "win_count": null,
+      "total_count": null
+    },
+    {
+      "tail": "1",
+      "total_diff": null,
+      "avg_diff": null,
+      "avg_games": 466.0,
+      "win_rate": null,
+      "win_count": null,
+      "total_count": null
+    },
+    {
+      "tail": "2",
+      "total_diff": null,
+      "avg_diff": null,
+      "avg_games": 1016.0,
+      "win_rate": null,
+      "win_count": null,
+      "total_count": null
+    },
+    {
+      "tail": "3",
+      "total_diff": 496.0,
+      "avg_diff": 26.0,
+      "avg_games": 809.0,
+      "win_rate": 21.1,
+      "win_count": 4,
+      "total_count": 19
+    },
+    {
+      "tail": "5",
+      "total_diff": null,
+      "avg_diff": null,
+      "avg_games": 499.0,
+      "win_rate": null,
+      "win_count": null,
+      "total_count": null
+    },
+    {
+      "tail": "6",
+      "total_diff": null,
+      "avg_diff": null,
+      "avg_games": 902.0,
+      "win_rate": null,
+      "win_count": null,
+      "total_count": null
+    },
+    {
+      "tail": "7",
+      "total_diff": null,
+      "avg_diff": null,
+      "avg_games": 627.0,
+      "win_rate": null,
+      "win_count": null,
+      "total_count": null
+    },
+    {
+      "tail": "8",
+      "total_diff": 1755.0,
+      "avg_diff": 88.0,
+      "avg_games": 972.0,
+      "win_rate": 25.0,
+      "win_count": 5,
+      "total_count": 20
+    },
+    {
+      "tail": "ゾロ目",
+      "total_diff": 582.0,
+      "avg_diff": 31.0,
+      "avg_games": 984.0,
+      "win_rate": 21.1,
+      "win_count": 4,
+      "total_count": 19
+    }
+  ]
+}
