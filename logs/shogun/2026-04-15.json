@@ -1,0 +1,194 @@
+{
+  "store": "将軍葛西店",
+  "date": "2026/04/15",
+  "total": {
+    "総差枚": 5413.0,
+    "平均差枚": 1083.0,
+    "勝率": "80.0%(4/5)"
+  },
+  "machine_ranking": [
+    {
+      "rank": 1,
+      "machine": "北斗の拳 転生の章2",
+      "total_diff": 5.0,
+      "avg_diff": 413.0,
+      "avg_games": 1.0,
+      "win_rate": 80.0,
+      "win_count": 4,
+      "total_count": 5
+    },
+    {
+      "rank": 2,
+      "machine": "スマスロ北斗の拳",
+      "total_diff": 3.0,
+      "avg_diff": 248.0,
+      "avg_games": 541.0,
+      "win_rate": 50.0,
+      "win_count": 3,
+      "total_count": 6
+    },
+    {
+      "rank": 3,
+      "machine": "ディスクアップ2",
+      "total_diff": 2.0,
+      "avg_diff": 433.0,
+      "avg_games": 608.0,
+      "win_rate": 50.0,
+      "win_count": 2,
+      "total_count": 4
+    },
+    {
+      "rank": 4,
+      "machine": "ファンキージャグラー2",
+      "total_diff": 1.0,
+      "avg_diff": 764.0,
+      "avg_games": 441.0,
+      "win_rate": 25.0,
+      "win_count": 1,
+      "total_count": 4
+    },
+    {
+      "rank": 5,
+      "machine": "戦国乙女4 戦乱に閃く炯眼の軍師",
+      "total_diff": 1.0,
+      "avg_diff": 348.0,
+      "avg_games": 449.0,
+      "win_rate": 33.3,
+      "win_count": 1,
+      "total_count": 3
+    },
+    {
+      "rank": 6,
+      "machine": "ゴッドイーター リザレクション",
+      "total_diff": 1.0,
+      "avg_diff": 258.0,
+      "avg_games": 419.0,
+      "win_rate": 66.7,
+      "win_count": 2,
+      "total_count": 3
+    },
+    {
+      "rank": 7,
+      "machine": "新ハナビ",
+      "total_diff": 1.0,
+      "avg_diff": 105.0,
+      "avg_games": 276.0,
+      "win_rate": 75.0,
+      "win_count": 3,
+      "total_count": 4
+    },
+    {
+      "rank": 8,
+      "machine": "ヱヴァンゲリヲン ～約束の扉～",
+      "total_diff": 858.0,
+      "avg_diff": 429.0,
+      "avg_games": 899.0,
+      "win_rate": 100.0,
+      "win_count": 2,
+      "total_count": 2
+    },
+    {
+      "rank": 9,
+      "machine": "デビル メイ クライ5 スタイリッシュトライブ",
+      "total_diff": 219.0,
+      "avg_diff": 73.0,
+      "avg_games": 384.0,
+      "win_rate": 33.3,
+      "win_count": 1,
+      "total_count": 3
+    },
+    {
+      "rank": 10,
+      "machine": "スーパーブラックジャック",
+      "total_diff": 30.0,
+      "avg_diff": 15.0,
+      "avg_games": 261.0,
+      "win_rate": 50.0,
+      "win_count": 1,
+      "total_count": 2
+    }
+  ],
+  "tail_ranking": [
+    {
+      "tail": "0",
+      "total_diff": null,
+      "avg_diff": null,
+      "avg_games": 344.0,
+      "win_rate": null,
+      "win_count": null,
+      "total_count": null
+    },
+    {
+      "tail": "1",
+      "total_diff": null,
+      "avg_diff": null,
+      "avg_games": 803.0,
+      "win_rate": null,
+      "win_count": null,
+      "total_count": null
+    },
+    {
+      "tail": "2",
+      "total_diff": 5221.0,
+      "avg_diff": 261.0,
+      "avg_games": 747.0,
+      "win_rate": 20.0,
+      "win_count": 4,
+      "total_count": 20
+    },
+    {
+      "tail": "3",
+      "total_diff": 686.0,
+      "avg_diff": 36.0,
+      "avg_games": 441.0,
+      "win_rate": 26.3,
+      "win_count": 5,
+      "total_count": 19
+    },
+    {
+      "tail": "5",
+      "total_diff": 364.0,
+      "avg_diff": 19.0,
+      "avg_games": 887.0,
+      "win_rate": 36.8,
+      "win_count": 7,
+      "total_count": 19
+    },
+    {
+      "tail": "6",
+      "total_diff": null,
+      "avg_diff": null,
+      "avg_games": 742.0,
+      "win_rate": null,
+      "win_count": null,
+      "total_count": null
+    },
+    {
+      "tail": "7",
+      "total_diff": 28.0,
+      "avg_diff": 1.0,
+      "avg_games": 761.0,
+      "win_rate": 20.0,
+      "win_count": 4,
+      "total_count": 20
+    },
+    {
+      "tail": "8",
+      "total_diff": null,
+      "avg_diff": null,
+      "avg_games": 618.0,
+      "win_rate": null,
+      "win_count": null,
+      "total_count": null
+    },
+    {
+      "tail": "ゾロ目",
+      "total_diff": null,
+      "avg_diff": null,
+      "avg_games": 725.0,
+      "win_rate": null,
+      "win_count": null,
+      "total_count": null
+    }
+  ]
+}
