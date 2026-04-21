@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-21 22:52",
+  "updated": "2026-04-21 22:53",
   "stores": [
     {
       "store": "将軍葛西店",
@@ -413,48 +413,28 @@
     },
     {
       "store": "パラッツォ葛西店",
-      "date": "2026/02/22",
+      "date": "2026/02/18",
       "total": {
-        "総差枚": 208396.0,
-        "平均差枚": 602.0,
-        "勝率": "57.8%(200/346)"
+        "総差枚": 46543.0,
+        "平均差枚": 135.0,
+        "勝率": "48.0%(166/346)"
       },
       "today": {
         "machine_ranking": [
           {
             "rank": 1,
-            "machine": "東京喰種",
-            "total_diff": 56.0,
-            "avg_diff": 528.0,
-            "avg_games": 3.0,
-            "win_rate": 66.7,
-            "win_count": 12,
-            "total_count": 18
-          },
-          {
-            "rank": 2,
             "machine": "マイジャグラーV",
-            "total_diff": 49.0,
-            "avg_diff": 710.0,
-            "avg_games": 1.0,
-            "win_rate": 90.6,
-            "win_count": 29,
+            "total_diff": 24.0,
+            "avg_diff": 939.0,
+            "avg_games": 779.0,
+            "win_rate": 65.6,
+            "win_count": 21,
             "total_count": 32
           },
           {
-            "rank": 3,
-            "machine": "ゴーゴージャグラー3",
-            "total_diff": 22.0,
-            "avg_diff": 94.0,
-            "avg_games": 1.0,
-            "win_rate": 92.9,
-            "win_count": 13,
-            "total_count": 14
-          },
-          {
-            "rank": 4,
+            "rank": 2,
             "machine": "ジャグラーガールズ",
-            "total_diff": 19.0,
+            "total_diff": 21.0,
             "avg_diff": 291.0,
             "avg_games": 3.0,
             "win_rate": 100.0,
@@ -462,265 +442,285 @@
             "total_count": 6
           },
           {
-            "rank": 5,
-            "machine": "革命機ヴァルヴレイヴ2",
-            "total_diff": 16.0,
-            "avg_diff": 456.0,
-            "avg_games": 2.0,
-            "win_rate": 62.5,
-            "win_count": 5,
-            "total_count": 8
-          },
-          {
-            "rank": 6,
-            "machine": "スマスロ北斗の拳",
-            "total_diff": 16.0,
-            "avg_diff": 409.0,
-            "avg_games": 2.0,
-            "win_rate": 100.0,
-            "win_count": 8,
-            "total_count": 8
-          },
-          {
-            "rank": 7,
-            "machine": "スマスロ炎炎ノ消防隊2",
-            "total_diff": 14.0,
-            "avg_diff": 313.0,
+            "rank": 3,
+            "machine": "モンキーターンV",
+            "total_diff": 15.0,
+            "avg_diff": 511.0,
             "avg_games": 1.0,
-            "win_rate": 55.6,
-            "win_count": 5,
-            "total_count": 9
+            "win_rate": 42.9,
+            "win_count": 6,
+            "total_count": 14
           },
           {
-            "rank": 8,
-            "machine": "スーパーブラックジャック",
-            "total_diff": 13.0,
-            "avg_diff": 489.0,
+            "rank": 4,
+            "machine": "主役は銭形5",
+            "total_diff": 14.0,
+            "avg_diff": 258.0,
             "avg_games": 3.0,
             "win_rate": 75.0,
             "win_count": 3,
             "total_count": 4
           },
           {
-            "rank": 9,
-            "machine": "モンスターハンターライズ",
-            "total_diff": 10.0,
-            "avg_diff": 520.0,
+            "rank": 5,
+            "machine": "東京リベンジャーズ",
+            "total_diff": 12.0,
+            "avg_diff": 153.0,
             "avg_games": 2.0,
-            "win_rate": 75.0,
+            "win_rate": 60.0,
             "win_count": 3,
-            "total_count": 4
-          },
-          {
-            "rank": 10,
-            "machine": "からくりサーカス",
-            "total_diff": 10.0,
-            "avg_diff": 291.0,
-            "avg_games": 2.0,
-            "win_rate": 75.0,
-            "win_count": 3,
-            "total_count": 4
-          },
-          {
-            "rank": 11,
-            "machine": "主役は銭形5",
-            "total_diff": 10.0,
-            "avg_diff": 32.0,
-            "avg_games": 2.0,
-            "win_rate": 75.0,
-            "win_count": 3,
-            "total_count": 4
-          },
-          {
-            "rank": 12,
-            "machine": "甲鉄城のカバネリ",
-            "total_diff": 9.0,
-            "avg_diff": 212.0,
-            "avg_games": 1.0,
-            "win_rate": 80.0,
-            "win_count": 4,
             "total_count": 5
           },
           {
-            "rank": 13,
-            "machine": "スマート沖スロ スターハナハナ",
-            "total_diff": 8.0,
-            "avg_diff": 851.0,
+            "rank": 6,
+            "machine": "スマスロ秘宝伝",
+            "total_diff": 11.0,
+            "avg_diff": 456.0,
+            "avg_games": 2.0,
+            "win_rate": 100.0,
+            "win_count": 4,
+            "total_count": 4
+          },
+          {
+            "rank": 7,
+            "machine": "モンスターハンターライズ",
+            "total_diff": 11.0,
+            "avg_diff": 408.0,
+            "avg_games": 2.0,
+            "win_rate": 75.0,
+            "win_count": 3,
+            "total_count": 4
+          },
+          {
+            "rank": 8,
+            "machine": "化物語",
+            "total_diff": 11.0,
+            "avg_diff": 360.0,
             "avg_games": 1.0,
             "win_rate": 83.3,
             "win_count": 5,
             "total_count": 6
           },
           {
-            "rank": 14,
+            "rank": 9,
             "machine": "痛いのは嫌なので防御力に極振りしたいと思います。",
-            "total_diff": 8.0,
-            "avg_diff": 826.0,
-            "avg_games": 2.0,
-            "win_rate": 33.3,
-            "win_count": 1,
+            "total_diff": 11.0,
+            "avg_diff": 230.0,
+            "avg_games": 3.0,
+            "win_rate": 66.7,
+            "win_count": 2,
             "total_count": 3
           },
           {
-            "rank": 15,
-            "machine": "アレックス ブライト",
-            "total_diff": 7.0,
-            "avg_diff": 938.0,
-            "avg_games": 1.0,
-            "win_rate": 75.0,
-            "win_count": 3,
-            "total_count": 4
+            "rank": 10,
+            "machine": "ゴーゴージャグラー3",
+            "total_diff": 8.0,
+            "avg_diff": 918.0,
+            "avg_games": 637.0,
+            "win_rate": 64.3,
+            "win_count": 9,
+            "total_count": 14
           },
           {
-            "rank": 16,
+            "rank": 11,
+            "machine": "不二子BT",
+            "total_diff": 8.0,
+            "avg_diff": 229.0,
+            "avg_games": 2.0,
+            "win_rate": 100.0,
+            "win_count": 3,
+            "total_count": 3
+          },
+          {
+            "rank": 12,
+            "machine": "ファンキージャグラー2",
+            "total_diff": 7.0,
+            "avg_diff": 853.0,
+            "avg_games": 654.0,
+            "win_rate": 58.3,
+            "win_count": 7,
+            "total_count": 12
+          },
+          {
+            "rank": 13,
+            "machine": "スマスロ ハナビ",
+            "total_diff": 7.0,
+            "avg_diff": 615.0,
+            "avg_games": 1.0,
+            "win_rate": 100.0,
+            "win_count": 5,
+            "total_count": 5
+          },
+          {
+            "rank": 14,
             "machine": "いざ！番長",
             "total_diff": 7.0,
-            "avg_diff": 547.0,
+            "avg_diff": 205.0,
             "avg_games": 1.0,
             "win_rate": 60.0,
             "win_count": 3,
             "total_count": 5
           },
           {
-            "rank": 17,
-            "machine": "キングハナハナ-30",
-            "total_diff": 6.0,
-            "avg_diff": 698.0,
+            "rank": 15,
+            "machine": "ミスタージャグラー",
+            "total_diff": 5.0,
+            "avg_diff": 529.0,
             "avg_games": 1.0,
             "win_rate": 100.0,
+            "win_count": 3,
+            "total_count": 3
+          },
+          {
+            "rank": 16,
+            "machine": "スマート沖スロ スターハナハナ",
+            "total_diff": 5.0,
+            "avg_diff": 321.0,
+            "avg_games": 887.0,
+            "win_rate": 66.7,
             "win_count": 4,
-            "total_count": 4
+            "total_count": 6
+          },
+          {
+            "rank": 17,
+            "machine": "スマート沖スロ ニューキングハナハナV",
+            "total_diff": 4.0,
+            "avg_diff": 526.0,
+            "avg_games": 1.0,
+            "win_rate": 66.7,
+            "win_count": 2,
+            "total_count": 3
           },
           {
             "rank": 18,
             "machine": "ネオアイムジャグラーEX",
-            "total_diff": 5.0,
-            "avg_diff": 962.0,
-            "avg_games": 271.0,
+            "total_diff": 3.0,
+            "avg_diff": 518.0,
+            "avg_games": 160.0,
             "win_rate": 59.1,
             "win_count": 13,
             "total_count": 22
           },
           {
             "rank": 19,
-            "machine": "ハッピージャグラーVIII",
-            "total_diff": 4.0,
-            "avg_diff": 839.0,
-            "avg_games": 538.0,
-            "win_rate": 55.6,
-            "win_count": 5,
-            "total_count": 9
+            "machine": "アレックス ブライト",
+            "total_diff": 3.0,
+            "avg_diff": 244.0,
+            "avg_games": 811.0,
+            "win_rate": 75.0,
+            "win_count": 3,
+            "total_count": 4
           },
           {
             "rank": 20,
-            "machine": "スマスロ ハナビ",
-            "total_diff": 4.0,
-            "avg_diff": 488.0,
-            "avg_games": 898.0,
-            "win_rate": 60.0,
-            "win_count": 3,
-            "total_count": 5
+            "machine": "ウルトラミラクルジャグラー",
+            "total_diff": 1.0,
+            "avg_diff": 879.0,
+            "avg_games": 626.0,
+            "win_rate": 66.7,
+            "win_count": 2,
+            "total_count": 3
           }
         ],
         "tail_ranking": [
           {
             "tail": "0",
+            "total_diff": 18586.0,
+            "avg_diff": 453.0,
+            "avg_games": 5454.0,
+            "win_rate": 43.9,
+            "win_count": 18,
+            "total_count": 41
+          },
+          {
+            "tail": "1",
             "total_diff": null,
             "avg_diff": null,
-            "avg_games": 6426.0,
+            "avg_games": 6052.0,
             "win_rate": null,
             "win_count": null,
             "total_count": null
           },
           {
-            "tail": "1",
-            "total_diff": 46216.0,
-            "avg_diff": 1075.0,
-            "avg_games": 6498.0,
-            "win_rate": 65.1,
-            "win_count": 28,
-            "total_count": 43
-          },
-          {
             "tail": "2",
-            "total_diff": 3422.0,
-            "avg_diff": 80.0,
-            "avg_games": 6427.0,
-            "win_rate": 60.5,
-            "win_count": 26,
-            "total_count": 43
+            "total_diff": null,
+            "avg_diff": null,
+            "avg_games": 5998.0,
+            "win_rate": null,
+            "win_count": null,
+            "total_count": null
           },
           {
             "tail": "3",
-            "total_diff": 22864.0,
-            "avg_diff": 508.0,
-            "avg_games": 6776.0,
-            "win_rate": 62.2,
-            "win_count": 28,
-            "total_count": 45
+            "total_diff": null,
+            "avg_diff": null,
+            "avg_games": 5841.0,
+            "win_rate": null,
+            "win_count": null,
+            "total_count": null
           },
           {
             "tail": "5",
-            "total_diff": 32662.0,
-            "avg_diff": 726.0,
-            "avg_games": 6516.0,
+            "total_diff": 24547.0,
+            "avg_diff": 545.0,
+            "avg_games": 5401.0,
             "win_rate": 57.8,
             "win_count": 26,
             "total_count": 45
           },
           {
             "tail": "6",
-            "total_diff": 29748.0,
-            "avg_diff": 676.0,
-            "avg_games": 6498.0,
-            "win_rate": 54.5,
-            "win_count": 24,
-            "total_count": 44
+            "total_diff": null,
+            "avg_diff": null,
+            "avg_games": 5889.0,
+            "win_rate": null,
+            "win_count": null,
+            "total_count": null
           },
           {
             "tail": "7",
-            "total_diff": 64738.0,
-            "avg_diff": 1506.0,
-            "avg_games": 6622.0,
-            "win_rate": 67.4,
-            "win_count": 29,
+            "total_diff": 26177.0,
+            "avg_diff": 609.0,
+            "avg_games": 6173.0,
+            "win_rate": 55.8,
+            "win_count": 24,
             "total_count": 43
           },
           {
             "tail": "8",
-            "total_diff": 8831.0,
-            "avg_diff": 210.0,
-            "avg_games": 6553.0,
-            "win_rate": 54.8,
-            "win_count": 23,
-            "total_count": 42
-          },
-          {
-            "tail": "ゾロ目",
             "total_diff": null,
             "avg_diff": null,
-            "avg_games": 6293.0,
+            "avg_games": 5791.0,
             "win_rate": null,
             "win_count": null,
             "total_count": null
+          },
+          {
+            "tail": "ゾロ目",
+            "total_diff": 8956.0,
+            "avg_diff": 204.0,
+            "avg_games": 5781.0,
+            "win_rate": 43.2,
+            "win_count": 19,
+            "total_count": 44
           }
         ]
       },
       "prediction": {
         "machine_scores": [
           {
-            "machine": "ミスタージャグラー",
-            "score": 60.3,
-            "hot_rate": 100.0,
-            "avg_diff": 132,
-            "days": 7
-          },
-          {
-            "machine": "アレックス ブライト",
+            "machine": "不二子BT",
             "score": 60.2,
             "hot_rate": 100.0,
-            "avg_diff": 80,
-            "days": 5
+            "avg_diff": 85,
+            "days": 9
+          },
+          {
+            "machine": "ミスタージャグラー",
+            "score": 60.2,
+            "hot_rate": 100.0,
+            "avg_diff": 116,
+            "days": 8
           },
           {
             "machine": "ハッピージャグラーVIII",
@@ -730,13 +730,6 @@
             "days": 7
           },
           {
-            "machine": "不二子BT",
-            "score": 60.2,
-            "hot_rate": 100.0,
-            "avg_diff": 94,
-            "days": 8
-          },
-          {
             "machine": "鉄拳6",
             "score": 60.2,
             "hot_rate": 100.0,
@@ -744,121 +737,128 @@
             "days": 7
           },
           {
+            "machine": "アレックス ブライト",
+            "score": 60.1,
+            "hot_rate": 100.0,
+            "avg_diff": 67,
+            "days": 6
+          },
+          {
             "machine": "マイジャグラーV",
             "score": 60.0,
             "hot_rate": 100.0,
             "avg_diff": 23,
-            "days": 14
+            "days": 15
+          },
+          {
+            "machine": "主役は銭形5",
+            "score": 60.0,
+            "hot_rate": 100.0,
+            "avg_diff": 7,
+            "days": 7
+          },
+          {
+            "machine": "東京リベンジャーズ",
+            "score": 60.0,
+            "hot_rate": 100.0,
+            "avg_diff": 11,
+            "days": 8
+          },
+          {
+            "machine": "スマスロ秘宝伝",
+            "score": 60.0,
+            "hot_rate": 100.0,
+            "avg_diff": 8,
+            "days": 4
+          },
+          {
+            "machine": "モンスターハンターライズ",
+            "score": 60.0,
+            "hot_rate": 100.0,
+            "avg_diff": 8,
+            "days": 8
+          },
+          {
+            "machine": "化物語",
+            "score": 60.0,
+            "hot_rate": 100.0,
+            "avg_diff": 10,
+            "days": 9
           },
           {
             "machine": "ゴーゴージャグラー3",
             "score": 60.0,
             "hot_rate": 100.0,
             "avg_diff": 9,
-            "days": 9
+            "days": 10
           },
           {
-            "machine": "革命機ヴァルヴレイヴ2",
-            "score": 60.0,
-            "hot_rate": 100.0,
-            "avg_diff": 10,
-            "days": 7
-          },
-          {
-            "machine": "スーパーブラックジャック",
-            "score": 60.0,
-            "hot_rate": 100.0,
-            "avg_diff": 8,
-            "days": 7
-          },
-          {
-            "machine": "モンスターハンターライズ",
-            "score": 60.0,
-            "hot_rate": 100.0,
-            "avg_diff": 7,
-            "days": 7
-          },
-          {
-            "machine": "からくりサーカス",
-            "score": 60.0,
-            "hot_rate": 100.0,
-            "avg_diff": 5,
-            "days": 7
-          },
-          {
-            "machine": "主役は銭形5",
+            "machine": "ファンキージャグラー2",
             "score": 60.0,
             "hot_rate": 100.0,
             "avg_diff": 6,
-            "days": 6
-          },
-          {
-            "machine": "甲鉄城のカバネリ",
-            "score": 60.0,
-            "hot_rate": 100.0,
-            "avg_diff": 12,
-            "days": 3
+            "days": 5
           },
           {
             "machine": "スマート沖スロ スターハナハナ",
             "score": 60.0,
             "hot_rate": 100.0,
             "avg_diff": 7,
-            "days": 8
+            "days": 9
           },
           {
-            "machine": "キングハナハナ-30",
+            "machine": "スマート沖スロ ニューキングハナハナV",
             "score": 60.0,
             "hot_rate": 100.0,
-            "avg_diff": 4,
-            "days": 10
+            "avg_diff": 6,
+            "days": 7
           }
         ],
         "tail_scores": [
           {
             "tail": "8",
             "avg_win_rate": 55.6,
-            "days": 17
+            "days": 18
           },
           {
             "tail": "5",
-            "avg_win_rate": 52.8,
-            "days": 17
+            "avg_win_rate": 53.2,
+            "days": 18
           },
           {
             "tail": "2",
             "avg_win_rate": 51.7,
-            "days": 17
+            "days": 18
           },
           {
             "tail": "1",
             "avg_win_rate": 51.4,
-            "days": 17
-          },
-          {
-            "tail": "0",
-            "avg_win_rate": 51.0,
-            "days": 17
+            "days": 18
           },
           {
             "tail": "3",
             "avg_win_rate": 50.4,
-            "days": 17
+            "days": 18
+          },
+          {
+            "tail": "0",
+            "avg_win_rate": 50.3,
+            "days": 18
           },
           {
             "tail": "7",
-            "avg_win_rate": 49.7,
-            "days": 17
+            "avg_win_rate": 50.2,
+            "days": 18
           },
           {
             "tail": "6",
             "avg_win_rate": 47.5,
-            "days": 17
+            "days": 18
           },
           {
             "tail": "ゾロ目",
-            "avg_win_rate": 47.5,
-            "days": 17
+            "avg_win_rate": 47.0,
+            "days": 18
           }
         ],
         "weekday_scores": [
@@ -884,8 +884,8 @@
           },
           {
             "weekday": "水",
-            "avg_total_diff": 46605,
-            "days": 3
+            "avg_total_diff": 46590,
+            "days": 4
           },
           {
             "weekday": "金",
@@ -898,7 +898,7 @@
             "days": 1
           }
         ],
-        "log_count": 17
+        "log_count": 18
       }
     }
   ]
