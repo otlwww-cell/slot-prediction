@@ -1,0 +1,194 @@
+{
+  "store": "将軍葛西店",
+  "date": "2026/04/03",
+  "total": {
+    "総差枚": 9029.0,
+    "平均差枚": 4514.0,
+    "勝率": "50.0%(1/2)"
+  },
+  "machine_ranking": [
+    {
+      "rank": 1,
+      "machine": "いざ！番長",
+      "total_diff": 9.0,
+      "avg_diff": 29.0,
+      "avg_games": 4.0,
+      "win_rate": 50.0,
+      "win_count": 1,
+      "total_count": 2
+    },
+    {
+      "rank": 2,
+      "machine": "キャッツアイ",
+      "total_diff": 2.0,
+      "avg_diff": 396.0,
+      "avg_games": 1.0,
+      "win_rate": 50.0,
+      "win_count": 1,
+      "total_count": 2
+    },
+    {
+      "rank": 3,
+      "machine": "ゴッドイーター リザレクション",
+      "total_diff": 1.0,
+      "avg_diff": 78.0,
+      "avg_games": 359.0,
+      "win_rate": 66.7,
+      "win_count": 2,
+      "total_count": 3
+    },
+    {
+      "rank": 4,
+      "machine": "かぐや様は告らせたい",
+      "total_diff": 827.0,
+      "avg_diff": 207.0,
+      "avg_games": 1.0,
+      "win_rate": 25.0,
+      "win_count": 1,
+      "total_count": 4
+    },
+    {
+      "rank": 5,
+      "machine": "モンスターハンターライズ",
+      "total_diff": 799.0,
+      "avg_diff": 200.0,
+      "avg_games": 96.0,
+      "win_rate": 25.0,
+      "win_count": 1,
+      "total_count": 4
+    },
+    {
+      "rank": 6,
+      "machine": "ファンキージャグラー2",
+      "total_diff": 784.0,
+      "avg_diff": 196.0,
+      "avg_games": 2.0,
+      "win_rate": 25.0,
+      "win_count": 1,
+      "total_count": 4
+    },
+    {
+      "rank": 7,
+      "machine": "ラブ嬢3～Wご指名はいかがですか?～",
+      "total_diff": 471.0,
+      "avg_diff": 157.0,
+      "avg_games": 572.0,
+      "win_rate": 66.7,
+      "win_count": 2,
+      "total_count": 3
+    },
+    {
+      "rank": 8,
+      "machine": "サンダーVライトニング",
+      "total_diff": 200.0,
+      "avg_diff": 100.0,
+      "avg_games": 104.0,
+      "win_rate": 50.0,
+      "win_count": 1,
+      "total_count": 2
+    },
+    {
+      "rank": 9,
+      "machine": "マギアレコード 魔法少女まどか☆マギカ外伝",
+      "total_diff": 58.0,
+      "avg_diff": 29.0,
+      "avg_games": 658.0,
+      "win_rate": 50.0,
+      "win_count": 1,
+      "total_count": 2
+    },
+    {
+      "rank": 10,
+      "machine": "スマスロ炎炎ノ消防隊",
+      "total_diff": 11.0,
+      "avg_diff": 6.0,
+      "avg_games": 494.0,
+      "win_rate": 50.0,
+      "win_count": 1,
+      "total_count": 2
+    }
+  ],
+  "tail_ranking": [
+    {
+      "tail": "0",
+      "total_diff": null,
+      "avg_diff": null,
+      "avg_games": 430.0,
+      "win_rate": null,
+      "win_count": null,
+      "total_count": null
+    },
+    {
+      "tail": "1",
+      "total_diff": 718.0,
+      "avg_diff": 36.0,
+      "avg_games": 342.0,
+      "win_rate": 15.0,
+      "win_count": 3,
+      "total_count": 20
+    },
+    {
+      "tail": "2",
+      "total_diff": null,
+      "avg_diff": null,
+      "avg_games": 720.0,
+      "win_rate": null,
+      "win_count": null,
+      "total_count": null
+    },
+    {
+      "tail": "3",
+      "total_diff": 6579.0,
+      "avg_diff": 346.0,
+      "avg_games": 1053.0,
+      "win_rate": 26.3,
+      "win_count": 5,
+      "total_count": 19
+    },
+    {
+      "tail": "5",
+      "total_diff": 12.0,
+      "avg_diff": 1.0,
+      "avg_games": 688.0,
+      "win_rate": 26.3,
+      "win_count": 5,
+      "total_count": 19
+    },
+    {
+      "tail": "6",
+      "total_diff": null,
+      "avg_diff": null,
+      "avg_games": 952.0,
+      "win_rate": null,
+      "win_count": null,
+      "total_count": null
+    },
+    {
+      "tail": "7",
+      "total_diff": null,
+      "avg_diff": null,
+      "avg_games": 885.0,
+      "win_rate": null,
+      "win_count": null,
+      "total_count": null
+    },
+    {
+      "tail": "8",
+      "total_diff": null,
+      "avg_diff": null,
+      "avg_games": 390.0,
+      "win_rate": null,
+      "win_count": null,
+      "total_count": null
+    },
+    {
+      "tail": "ゾロ目",
+      "total_diff": null,
+      "avg_diff": null,
+      "avg_games": 744.0,
+      "win_rate": null,
+      "win_count": null,
+      "total_count": null
+    }
+  ]
+}
