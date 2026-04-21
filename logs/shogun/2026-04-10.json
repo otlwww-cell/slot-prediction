@@ -1,0 +1,154 @@
+{
+  "store": "将軍葛西店",
+  "date": "2026/04/10",
+  "total": {
+    "総差枚": 2208.0,
+    "平均差枚": 736.0,
+    "勝率": "33.3%(1/3)"
+  },
+  "machine_ranking": [
+    {
+      "rank": 1,
+      "machine": "戦国乙女4 戦乱に閃く炯眼の軍師",
+      "total_diff": 2.0,
+      "avg_diff": 208.0,
+      "avg_games": 736.0,
+      "win_rate": 33.3,
+      "win_count": 1,
+      "total_count": 3
+    },
+    {
+      "rank": 2,
+      "machine": "炎炎ノ消防隊",
+      "total_diff": 1.0,
+      "avg_diff": 97.0,
+      "avg_games": 548.0,
+      "win_rate": 50.0,
+      "win_count": 1,
+      "total_count": 2
+    },
+    {
+      "rank": 3,
+      "machine": "デビル メイ クライ5 スタイリッシュトライブ",
+      "total_diff": 651.0,
+      "avg_diff": 217.0,
+      "avg_games": 281.0,
+      "win_rate": 33.3,
+      "win_count": 1,
+      "total_count": 3
+    },
+    {
+      "rank": 4,
+      "machine": "ヱヴァンゲリヲン ～約束の扉～",
+      "total_diff": 343.0,
+      "avg_diff": 172.0,
+      "avg_games": 118.0,
+      "win_rate": 50.0,
+      "win_count": 1,
+      "total_count": 2
+    },
+    {
+      "rank": 5,
+      "machine": "ゴーゴージャグラー3",
+      "total_diff": 157.0,
+      "avg_diff": 52.0,
+      "avg_games": 1.0,
+      "win_rate": 66.7,
+      "win_count": 2,
+      "total_count": 3
+    },
+    {
+      "rank": 6,
+      "machine": "ダーリン・イン・ザ・フランキス",
+      "total_diff": 155.0,
+      "avg_diff": 78.0,
+      "avg_games": 620.0,
+      "win_rate": 50.0,
+      "win_count": 1,
+      "total_count": 2
+    }
+  ],
+  "tail_ranking": [
+    {
+      "tail": "0",
+      "total_diff": null,
+      "avg_diff": null,
+      "avg_games": 402.0,
+      "win_rate": null,
+      "win_count": null,
+      "total_count": null
+    },
+    {
+      "tail": "1",
+      "total_diff": null,
+      "avg_diff": null,
+      "avg_games": 347.0,
+      "win_rate": null,
+      "win_count": null,
+      "total_count": null
+    },
+    {
+      "tail": "2",
+      "total_diff": null,
+      "avg_diff": null,
+      "avg_games": 479.0,
+      "win_rate": null,
+      "win_count": null,
+      "total_count": null
+    },
+    {
+      "tail": "3",
+      "total_diff": null,
+      "avg_diff": null,
+      "avg_games": 486.0,
+      "win_rate": null,
+      "win_count": null,
+      "total_count": null
+    },
+    {
+      "tail": "5",
+      "total_diff": null,
+      "avg_diff": null,
+      "avg_games": 451.0,
+      "win_rate": null,
+      "win_count": null,
+      "total_count": null
+    },
+    {
+      "tail": "6",
+      "total_diff": null,
+      "avg_diff": null,
+      "avg_games": 637.0,
+      "win_rate": null,
+      "win_count": null,
+      "total_count": null
+    },
+    {
+      "tail": "7",
+      "total_diff": null,
+      "avg_diff": null,
+      "avg_games": 421.0,
+      "win_rate": null,
+      "win_count": null,
+      "total_count": null
+    },
+    {
+      "tail": "8",
+      "total_diff": null,
+      "avg_diff": null,
+      "avg_games": 539.0,
+      "win_rate": null,
+      "win_count": null,
+      "total_count": null
+    },
+    {
+      "tail": "ゾロ目",
+      "total_diff": 1906.0,
+      "avg_diff": 100.0,
+      "avg_games": 611.0,
+      "win_rate": 26.3,
+      "win_count": 5,
+      "total_count": 19
+    }
+  ]
+}
