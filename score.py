@@ -102,12 +102,12 @@ def parse_anaslo(text):
     # 末尾別データ：複数パターンに対応
     TAIL_KEYS = ["0","1","2","3","4","5","6","7","8","9","ゾロ目"]
 
-    # 末尾別データをCSVパーサーで解析
-    import csv as csv_module
-    from io import StringIO as SIO
+    # 末尾別データ：csvモジュールで解析
+    import csv as _csv
+    from io import StringIO as _SIO
 
     in_tail = False
-    for i, line in enumerate(lines):
+    for line in lines:
         if "末尾別データ" in line:
             in_tail = True
             continue
@@ -115,35 +115,26 @@ def parse_anaslo(text):
             break
         if not in_tail:
             continue
-
-        # ヘッダー行スキップ
-        if re.match(r"^末尾.?末尾別", line) or "平均G数" in line:
+        if "平均G数" in line or "末尾別差枚" in line:
             continue
 
-        # 勝率を先に抽出
-        pct = re.search(r"([\d.]+)%\((\d+)/(\d+)\)", line)
-        wr = float(pct.group(1)) if pct else None
-        wc = int(pct.group(2)) if pct else None
-        tc = int(pct.group(3)) if pct else None
-
-        # 勝率部分を除去してCSVパース（数値カンマを保持）
-        clean_line = re.sub(r"[\d.]+%\(\d+/\d+\)", "", line).rstrip(",")
         try:
-            reader = csv_module.reader(SIO(clean_line))
-            vals = [v.strip() for v in next(reader)]
+            row = next(_csv.reader(_SIO(line)))
         except:
             continue
 
-        if not vals or vals[0] not in TAIL_KEYS:
+        if not row or row[0].strip() not in TAIL_KEYS:
             continue
 
-        # A=末尾 B=末尾別差枚 C=平均差枚 D=平均G数
-        td = clean_num(vals[1]) if len(vals) > 1 else None
-        ad = clean_num(vals[2]) if len(vals) > 2 else None
-        ag = clean_num(vals[3]) if len(vals) > 3 else None
+        tail = row[0].strip()
+        td = clean_num(row[1]) if len(row) > 1 else None
+        ad = clean_num(row[2]) if len(row) > 2 else None
+        ag = clean_num(row[3]) if len(row) > 3 else None
+        wr_str = row[4] if len(row) > 4 else ""
+        wr, wc, tc = parse_winrate(wr_str)
 
         result["tail_ranking"].append({
-            "tail": vals[0],
+            "tail": tail,
             "total_diff": td,
             "avg_diff": ad,
             "avg_games": ag,
