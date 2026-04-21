@@ -52,7 +52,7 @@ def parse_anaslo(text):
     for i, line in enumerate(lines):
         if line in ["全体データ", "全データ一覧"]:
             for j in range(i+1, min(i+6, len(lines))):
-                vals = re.split(r"\t+", lines[j])
+                vals = re.split(r"[,\t]+", lines[j])
                 if len(vals) < 3:
                     vals = re.split(r"\s{2,}", lines[j])
                 if len(vals) >= 3:
@@ -72,13 +72,13 @@ def parse_anaslo(text):
         m = re.match(r"(\d+)位：(.+)", line)
         if m:
             rank = int(m.group(1))
-            machine = m.group(2).strip()
+            machine = m.group(2).strip().rstrip(",").strip()
             entry = {"rank": rank, "machine": machine,
                      "total_diff": None, "avg_diff": None,
                      "avg_games": None, "win_rate": None,
                      "win_count": None, "total_count": None}
             for j in range(i+1, min(i+8, len(lines))):
-                vals = re.split(r"\t+", lines[j])
+                vals = re.split(r"[,\t]+", lines[j])
                 if len(vals) < 2:
                     vals = re.split(r"\s{2,}", lines[j])
                 # 勝率パターンを含む行を探す
@@ -117,7 +117,7 @@ def parse_anaslo(text):
             continue
 
         # タブ区切りで分割
-        vals = re.split(r"\t+", line.strip())
+        vals = re.split(r"[,\t]+", line.strip())
 
         # タブがない場合は末尾キーで始まる行を探す
         if len(vals) < 2:
