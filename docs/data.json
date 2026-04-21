@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-21 15:12",
+  "updated": "2026-04-21 15:14",
   "stores": [
     {
       "store": "将軍葛西店",
@@ -173,78 +173,6 @@
           "total_diff": null,
           "avg_diff": null,
           "avg_games": 818.0,
-          "win_rate": null,
-          "win_count": null,
-          "total_count": null
-        },
-        {
-          "tail": "1",
-          "total_diff": null,
-          "avg_diff": 499.0,
-          "avg_games": null,
-          "win_rate": null,
-          "win_count": null,
-          "total_count": null
-        },
-        {
-          "tail": "2",
-          "total_diff": null,
-          "avg_diff": 497.0,
-          "avg_games": 939.0,
-          "win_rate": 35.0,
-          "win_count": 7,
-          "total_count": 20
-        },
-        {
-          "tail": "3",
-          "total_diff": null,
-          "avg_diff": 105.0,
-          "avg_games": 867.0,
-          "win_rate": 42.1,
-          "win_count": 8,
-          "total_count": 19
-        },
-        {
-          "tail": "5",
-          "total_diff": null,
-          "avg_diff": null,
-          "avg_games": 881.0,
-          "win_rate": null,
-          "win_count": null,
-          "total_count": null
-        },
-        {
-          "tail": "6",
-          "total_diff": null,
-          "avg_diff": null,
-          "avg_games": null,
-          "win_rate": null,
-          "win_count": null,
-          "total_count": null
-        },
-        {
-          "tail": "7",
-          "total_diff": null,
-          "avg_diff": null,
-          "avg_games": 860.0,
-          "win_rate": null,
-          "win_count": null,
-          "total_count": null
-        },
-        {
-          "tail": "8",
-          "total_diff": null,
-          "avg_diff": 151.0,
-          "avg_games": null,
-          "win_rate": null,
-          "win_count": null,
-          "total_count": null
-        },
-        {
-          "tail": "ゾロ目",
-          "total_diff": null,
-          "avg_diff": null,
-          "avg_games": null,
           "win_rate": null,
           "win_count": null,
           "total_count": null
