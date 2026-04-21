@@ -1,20 +1,21 @@
-import pandas as pd
 import json
 import re
+import csv
 from datetime import datetime
 from io import StringIO
-import requests
 
+# =============================================
+# 設定：店舗ごとの入力ファイル
+# =============================================
 STORES = [
-    {
-        "name": "将軍葛西店",
-        "csv_url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vT_uca2oOds_D2Vx--UdZ7bnY2_9iZvcVRW-Pjls3kIytv8kzEnkViKZwlKBYXoaBU1f-TDzQLYSOQQ/pub?gid=0&single=true&output=csv"
-    },
+    {"name": "将軍葛西店", "file": "data/shogun.txt"},
+    # 他店舗を追加する場合はここに追記
+    # {"name": "メッセ西葛西店", "file": "data/messe.txt"},
 ]
 
 def clean_num(val):
-    s = str(val).replace(",", "").replace("+", "").replace(" ", "").replace("−","-").strip()
-    if s in ["#ERROR!", "#N/A", "-", "", "nan", "ー", "−−"]:
+    s = str(val).replace(",", "").replace("+", "").replace(" ", "").strip()
+    if s in ["#ERROR!", "#N/A", "-", "", "nan", "−"]:
         return None
     try:
         return float(s)
@@ -22,8 +23,7 @@ def clean_num(val):
         return None
 
 def parse_winrate(val):
-    s = str(val).strip()
-    m = re.match(r"([\d.]+)%\((\d+)/(\d+)\)", s)
+    m = re.match(r"([\d.]+)%\((\d+)/(\d+)\)", str(val).strip())
     if m:
         return float(m.group(1)), int(m.group(2)), int(m.group(3))
     return None, None, None
@@ -52,7 +52,7 @@ def parse_anaslo(text):
     for i, line in enumerate(lines):
         if line in ["全体データ", "全データ一覧"]:
             for j in range(i+1, min(i+6, len(lines))):
-                vals = re.split(r"[,\t]+", lines[j])
+                vals = re.split(r"\t+", lines[j])
                 if len(vals) < 3:
                     vals = re.split(r"\s{2,}", lines[j])
                 if len(vals) >= 3:
@@ -78,17 +78,13 @@ def parse_anaslo(text):
                      "avg_games": None, "win_rate": None,
                      "win_count": None, "total_count": None}
             for j in range(i+1, min(i+8, len(lines))):
-                vals = re.split(r"[,\t]+", lines[j])
-                if len(vals) < 2:
-                    vals = re.split(r"\s{2,}", lines[j])
-                # 勝率パターンを含む行を探す
+                vals = re.split(r"[\t,]+", lines[j])
                 wr_str = ""
                 for v in vals:
                     if re.search(r"\d+\.\d+%\(\d+/\d+\)", v):
                         wr_str = v
                         break
                 if wr_str:
-                    # A=機種別差枚 B=平均差枚 C=平均G数 D=勝率
                     entry["total_diff"] = clean_num(vals[0]) if len(vals) > 0 else None
                     entry["avg_diff"] = clean_num(vals[1]) if len(vals) > 1 else None
                     entry["avg_games"] = clean_num(vals[2]) if len(vals) > 2 else None
@@ -99,64 +95,58 @@ def parse_anaslo(text):
                     break
             result["machine_ranking"].append(entry)
 
-    # 末尾別データ：複数パターンに対応
+    # 末尾別データ：テキストから直接正規表現で抽出
     TAIL_KEYS = ["0","1","2","3","4","5","6","7","8","9","ゾロ目"]
 
-    # 末尾別データ：csvモジュールで解析
-    import csv as _csv
-    from io import StringIO as _SIO
-
-    in_tail = False
-    tail_debug_count = 0
-    for line in lines:
-        if "末尾別データ" in line:
-            in_tail = True
-            continue
-        if in_tail and "詳細データ" in line:
+    # 末尾セクションを切り出す
+    tail_start = -1
+    tail_end = -1
+    for i, line in enumerate(lines):
+        if "末尾別データ" in line and tail_start == -1:
+            tail_start = i
+        if tail_start > 0 and "詳細データ" in line:
+            tail_end = i
             break
-        if not in_tail:
-            continue
-        if tail_debug_count < 15:
-            print(f"  [TAIL LINE] {repr(line[:80])}")
-            tail_debug_count += 1
-        if "平均G数" in line or "末尾別差枚" in line:
-            continue
 
-        try:
-            row = next(_csv.reader(_SIO(line)))
-        except:
-            continue
+    if tail_start > 0:
+        tail_lines = lines[tail_start:tail_end if tail_end > 0 else tail_start+20]
+        for line in tail_lines:
+            if "平均G数" in line or "末尾別差枚" in line or "末尾別データ" in line:
+                continue
 
-        if not row or row[0].strip() not in TAIL_KEYS:
-            if row and row[0].strip() and "末尾" not in row[0] and "平均" not in row[0]:
-                print(f"  [DEBUG tail skip] {row[:3]}")
-            continue
+            # タブ区切りで分割を試みる
+            if "\t" in line:
+                vals = line.split("\t")
+            else:
+                # スペース区切りで分割
+                vals = re.split(r"\s{2,}", line)
 
-        tail = row[0].strip()
-        print(f"  [DEBUG tail hit] {tail}: {row}")
-        td = clean_num(row[1]) if len(row) > 1 else None
-        ad = clean_num(row[2]) if len(row) > 2 else None
-        ag = clean_num(row[3]) if len(row) > 3 else None
-        wr_str = row[4] if len(row) > 4 else ""
-        wr, wc, tc = parse_winrate(wr_str)
+            if not vals or vals[0].strip() not in TAIL_KEYS:
+                continue
 
-        result["tail_ranking"].append({
-            "tail": tail,
-            "total_diff": td,
-            "avg_diff": ad,
-            "avg_games": ag,
-            "win_rate": wr,
-            "win_count": wc,
-            "total_count": tc,
-        })
+            tail = vals[0].strip()
+            td = clean_num(vals[1]) if len(vals) > 1 else None
+            ad = clean_num(vals[2]) if len(vals) > 2 else None
+            ag = clean_num(vals[3]) if len(vals) > 3 else None
+            wr_str = vals[4] if len(vals) > 4 else ""
+            wr, wc, tc = parse_winrate(wr_str)
 
-        return result
+            result["tail_ranking"].append({
+                "tail": tail,
+                "total_diff": td,
+                "avg_diff": ad,
+                "avg_games": ag,
+                "win_rate": wr,
+                "win_count": wc,
+                "total_count": tc,
+            })
+
+    return result
 
 def process_store(store):
     try:
-        response = requests.get(store["csv_url"], timeout=30)
-        response.encoding = "utf-8"
-        text = response.text
+        with open(store["file"], "r", encoding="utf-8") as f:
+            text = f.read()
     except Exception as e:
         print(f"[ERROR] {store['name']} の読み込み失敗: {e}")
         return None
