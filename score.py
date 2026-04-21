@@ -5,194 +5,186 @@ from datetime import datetime
 from io import StringIO
 import requests
 
+# =============================================
+# 設定：店舗ごとのスプレッドシートCSV URL
+# =============================================
 STORES = [
     {
         "name": "将軍葛西店",
-        "csv_url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vT_uca2oOds_D2Vx--UdZ7bnY2_9iZvcVRW-Pjls3kIytv8kzEnkViKZwlKBYXoaBU1f-TDzQLYSOQQ/pub?output=csv"
+        "csv_url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vT_uca2oOds_D2Vx--UdZ7bnY2_9iZvcVRW-Pjls3kIytv8kzEnkViKZwlKBYXoaBU1f-TDzQLYSOQQ/pub?gid=1083792724&single=true&output=csv"
     },
+    # 他店舗を追加する場合はここに追記
+    # {"name": "メッセ西葛西店", "csv_url": "..."},
 ]
 
-def clean_number(val):
-    if val is None:
-        return None
-    s = str(val).replace(",", "").replace(" ", "").strip()
-    if s in ["#ERROR!", "#N/A", "-", "", "nan"]:
+def clean_num(val):
+    """+1,234 や -567 などを数値に変換"""
+    s = str(val).replace(",", "").replace("+", "").replace(" ", "").strip()
+    if s in ["#ERROR!", "#N/A", "-", "", "nan", "−"]:
         return None
     try:
         return float(s)
     except:
         return None
 
-def calc_score(games, diff, bb, rb):
-    games = games or 0
-    diff = diff or 0
-    if games < 200:
-        return 0
-    diff_score = min(max(diff / 50, -20), 60)
-    game_bonus = min(games / 100, 40)
-    return round(max(diff_score + game_bonus, 0), 1)
+def parse_winrate(val):
+    """66.7%(2/3) → (66.7, 2, 3)"""
+    s = str(val).strip()
+    m = re.match(r"([\d.]+)%\((\d+)/(\d+)\)", s)
+    if m:
+        return float(m.group(1)), int(m.group(2)), int(m.group(3))
+    return None, None, None
 
-def parse_anaslo_format(df_raw):
-    results = []
-    current_machine = None
-    in_single_block = False
+def parse_anaslo(text):
+    """
+    あなすろのコピペテキストから以下を抽出：
+    - 店舗名・日付
+    - 全体データ（総差枚・平均差枚・勝率）
+    - 機種別ランキング（最大20位）
+    - 末尾別データ
+    """
+    lines = [l.strip() for l in text.splitlines()]
+    lines = [l for l in lines if l]
 
-    SKIP_WORDS = {
-        "データ表示", "グラフ表示", "設置機種一覧へ戻る",
-        "末尾別データ一覧へ戻る", "平均", "スポンサーリンク",
-        "詳細データ", "設置機種一覧", "末尾毎詳細データ",
-        "機種名クリックで詳細データへジャンプ出来ます。",
-        "台番号", "機種名"
+    result = {
+        "store": "",
+        "date": "",
+        "total": {},
+        "machine_ranking": [],
+        "tail_ranking": [],
     }
 
-    def is_unit_row(v):
-        return re.match(r"^\d{3,4}$", str(v).replace(",","").strip()) is not None
-
-    def is_machine_name(v, next_v):
-        s = str(v).strip()
-        if not s or s in SKIP_WORDS or s == "nan":
-            return False
-        if re.match(r"^[\d,.\-/\s]+$", s):
-            return False
-        if re.match(r"^\d+位：", s):
-            return False
-        if re.match(r"^末尾", s):
-            return False
-        nv = str(next_v).strip()
-        if nv in ["", "nan"] or not re.match(r"^\d", nv):
-            return True
-        return False
-
-    for _, row in df_raw.iterrows():
-        vals = [str(v).strip() for v in row.values]
-        if all(v in ["", "nan"] for v in vals):
-            continue
-
-        first = vals[0]
-
-        if "1台設置機種" in first:
-            in_single_block = True
-            current_machine = None
-            continue
-
-        if "末尾毎詳細データ" in first:
+    # 店舗名・日付を検出
+    for line in lines[:10]:
+        m = re.match(r"(\d{4}/\d{2}/\d{2})\s+(.+?)\s+データまとめ", line)
+        if m:
+            result["date"] = m.group(1)
+            result["store"] = m.group(2)
             break
 
-        if first in SKIP_WORDS:
-            continue
+    # 全体データを検出
+    i = 0
+    while i < len(lines):
+        if lines[i] == "全体データ" or lines[i] == "全データ一覧":
+            # 次の行に 総差枚・平均差枚・平均G数・勝率 のヘッダー
+            if i+2 < len(lines):
+                vals = lines[i+2].split("\t") if "\t" in lines[i+2] else lines[i+2].split()
+                if len(vals) >= 4:
+                    result["total"] = {
+                        "総差枚": clean_num(vals[0]),
+                        "平均差枚": clean_num(vals[1]),
+                        "勝率": vals[3] if len(vals) > 3 else ""
+                    }
+            break
+        i += 1
 
-        if in_single_block:
-            if first in SKIP_WORDS or first == "nan" or not first:
-                continue
-            try:
-                unit_no = vals[1].replace(".0","")
-                games = clean_number(vals[2])
-                diff = clean_number(vals[3])
-                bb = clean_number(vals[4])
-                rb = clean_number(vals[5])
-                if games and games > 0:
-                    results.append({"機種名": first, "台番号": unit_no,
-                                    "G数": games, "差枚": diff, "BB": bb, "RB": rb})
-            except:
-                continue
-        else:
-            if first == "台番号":
-                continue
-            next_val = vals[1] if len(vals) > 1 else ""
-            if is_machine_name(first, next_val):
-                current_machine = first
-                continue
-            if current_machine and is_unit_row(first):
-                try:
-                    games = clean_number(vals[1])
-                    diff = clean_number(vals[2])
-                    bb = clean_number(vals[3])
-                    rb = clean_number(vals[4])
-                    if games and games > 0:
-                        results.append({"機種名": current_machine,
-                                        "台番号": first.replace(".0",""),
-                                        "G数": games, "差枚": diff, "BB": bb, "RB": rb})
-                except:
-                    continue
-    return results
+    # 機種別ランキングを検出
+    i = 0
+    while i < len(lines):
+        m = re.match(r"(\d+)位：(.+)", lines[i])
+        if m:
+            rank = int(m.group(1))
+            machine = m.group(2).strip()
+            # 次の数行からデータを取得
+            entry = {"rank": rank, "machine": machine,
+                     "total_diff": None, "avg_diff": None,
+                     "avg_games": None, "win_rate": None,
+                     "win_count": None, "total_count": None}
+            for j in range(i+1, min(i+5, len(lines))):
+                vals = lines[j].split("\t") if "\t" in lines[j] else re.split(r"\s{2,}", lines[j])
+                if len(vals) >= 3:
+                    d = clean_num(vals[0])
+                    ad = clean_num(vals[1])
+                    ag = clean_num(vals[2])
+                    wr_str = vals[3] if len(vals) > 3 else ""
+                    if d is not None and ag is not None:
+                        entry["total_diff"] = d
+                        entry["avg_diff"] = ad
+                        entry["avg_games"] = ag
+                        wr, wc, tc = parse_winrate(wr_str)
+                        entry["win_rate"] = wr
+                        entry["win_count"] = wc
+                        entry["total_count"] = tc
+                        break
+            result["machine_ranking"].append(entry)
+        i += 1
 
-def parse_simple_format(df_raw):
-    cols = [str(c).strip() for c in df_raw.columns]
-    required = {"機種名", "台番号", "G数", "差枚", "BB", "RB"}
-    if not required.issubset(set(cols)):
-        return None
-    results = []
-    for _, row in df_raw.iterrows():
-        machine = str(row.get("機種名","")).strip()
-        if not machine or machine in ["nan","機種名",""]:
+    # 末尾別データを検出
+    i = 0
+    in_tail = False
+    while i < len(lines):
+        if "末尾別データ" in lines[i]:
+            in_tail = True
+            i += 1
             continue
-        games = clean_number(row.get("G数"))
-        diff = clean_number(row.get("差枚"))
-        bb = clean_number(row.get("BB"))
-        rb = clean_number(row.get("RB"))
-        unit_no = str(row.get("台番号","")).replace(".0","")
-        if games and games > 0:
-            results.append({"機種名": machine, "台番号": unit_no,
-                            "G数": games, "差枚": diff, "BB": bb, "RB": rb})
-    return results
+        if in_tail and "詳細データ" in lines[i]:
+            break
+        if in_tail:
+            # 末尾ヘッダー行スキップ
+            if lines[i].startswith("末尾\t") or lines[i] == "末尾":
+                i += 1
+                continue
+            vals = lines[i].split("\t") if "\t" in lines[i] else re.split(r"\s{2,}", lines[i])
+            if len(vals) >= 4:
+                tail = vals[0].strip()
+                if tail in ["0","1","2","3","4","5","6","7","8","9","ゾロ目"]:
+                    td = clean_num(vals[1])
+                    ad = clean_num(vals[2])
+                    ag = clean_num(vals[3])
+                    wr_str = vals[4] if len(vals) > 4 else ""
+                    wr, wc, tc = parse_winrate(wr_str)
+                    result["tail_ranking"].append({
+                        "tail": tail,
+                        "total_diff": td,
+                        "avg_diff": ad,
+                        "avg_games": ag,
+                        "win_rate": wr,
+                        "win_count": wc,
+                        "total_count": tc
+                    })
+        i += 1
+
+    return result
 
 def process_store(store):
+    """CSVを取得してあなすろ形式を解析"""
     try:
         response = requests.get(store["csv_url"], timeout=30)
         response.encoding = "utf-8"
-        df_raw = pd.read_csv(StringIO(response.text), header=0, dtype=str)
+        # CSVの全テキストを結合して1つのテキストとして解析
+        text = response.text
     except Exception as e:
         print(f"[ERROR] {store['name']} の読み込み失敗: {e}")
-        return []
+        return None
 
-    simple = parse_simple_format(df_raw)
-    if simple is not None:
-        print(f"  シンプル形式で読み込み")
-        raw_list = simple
-    else:
-        print(f"  あなすろ形式で読み込み")
-        raw_list = parse_anaslo_format(df_raw)
+    parsed = parse_anaslo(text)
 
-    results = []
-    for item in raw_list:
-        games = item["G数"] or 0
-        diff = item["差枚"]
-        bb = item["BB"] or 0
-        rb = item["RB"] or 0
-        score = calc_score(games, diff, bb, rb)
-        results.append({
-            "店舗名": store["name"],
-            "機種名": item["機種名"],
-            "台番号": item["台番号"],
-            "G数_num": games,
-            "差枚_num": diff or 0,
-            "BB_num": int(bb),
-            "RB_num": int(rb),
-            "G数": f"{int(games):,}",
-            "差枚": f"{int(diff):+,}" if diff is not None else "#ERROR",
-            "BB": int(bb),
-            "RB": int(rb),
-            "スコア": score,
-        })
-    return results
+    # 店舗名が取得できなかった場合はstore設定から補完
+    if not parsed["store"]:
+        parsed["store"] = store["name"]
+
+    print(f"  日付: {parsed['date']}")
+    print(f"  機種ランキング: {len(parsed['machine_ranking'])}件")
+    print(f"  末尾データ: {len(parsed['tail_ranking'])}件")
+
+    return parsed
 
 def main():
-    all_results = []
+    all_stores = []
+
     for store in STORES:
         print(f"処理中: {store['name']}")
-        results = process_store(store)
-        all_results.extend(results)
-        print(f"  → {len(results)} 台取得")
-
-    all_results.sort(key=lambda x: x["スコア"], reverse=True)
+        data = process_store(store)
+        if data:
+            all_stores.append(data)
 
     with open("docs/data.json", "w", encoding="utf-8") as f:
         json.dump({
             "updated": datetime.now().strftime("%Y-%m-%d %H:%M"),
-            "data": all_results
+            "stores": all_stores
         }, f, ensure_ascii=False, indent=2)
 
-    print(f"完了: 合計 {len(all_results)} 台 → docs/data.json に保存")
+    print(f"\n完了: {len(all_stores)}店舗 → docs/data.json に保存")
 
 if __name__ == "__main__":
     main()
