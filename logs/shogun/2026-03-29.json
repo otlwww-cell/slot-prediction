@@ -1,0 +1,224 @@
+{
+  "store": "将軍葛西店",
+  "date": "2026/03/29",
+  "total": {
+    "総差枚": 9175.0,
+    "平均差枚": 2294.0,
+    "勝率": "75.0%(3/4)"
+  },
+  "machine_ranking": [
+    {
+      "rank": 1,
+      "machine": "モンキーターンV",
+      "total_diff": 9.0,
+      "avg_diff": 175.0,
+      "avg_games": 2.0,
+      "win_rate": 75.0,
+      "win_count": 3,
+      "total_count": 4
+    },
+    {
+      "rank": 2,
+      "machine": "ダーリン・イン・ザ・フランキス",
+      "total_diff": 5.0,
+      "avg_diff": 670.0,
+      "avg_games": 2.0,
+      "win_rate": 50.0,
+      "win_count": 1,
+      "total_count": 2
+    },
+    {
+      "rank": 3,
+      "machine": "東京喰種",
+      "total_diff": 5.0,
+      "avg_diff": 342.0,
+      "avg_games": 1.0,
+      "win_rate": 50.0,
+      "win_count": 2,
+      "total_count": 4
+    },
+    {
+      "rank": 4,
+      "machine": "スマスロ北斗の拳",
+      "total_diff": 3.0,
+      "avg_diff": 664.0,
+      "avg_games": 611.0,
+      "win_rate": 33.3,
+      "win_count": 2,
+      "total_count": 6
+    },
+    {
+      "rank": 5,
+      "machine": "からくりサーカス",
+      "total_diff": 3.0,
+      "avg_diff": 144.0,
+      "avg_games": 786.0,
+      "win_rate": 50.0,
+      "win_count": 2,
+      "total_count": 4
+    },
+    {
+      "rank": 6,
+      "machine": "かぐや様は告らせたい",
+      "total_diff": 2.0,
+      "avg_diff": 149.0,
+      "avg_games": 537.0,
+      "win_rate": 50.0,
+      "win_count": 2,
+      "total_count": 4
+    },
+    {
+      "rank": 7,
+      "machine": "マギアレコード 魔法少女まどか☆マギカ外伝",
+      "total_diff": 1.0,
+      "avg_diff": 945.0,
+      "avg_games": 972.0,
+      "win_rate": 50.0,
+      "win_count": 1,
+      "total_count": 2
+    },
+    {
+      "rank": 8,
+      "machine": "新鬼武者2",
+      "total_diff": 1.0,
+      "avg_diff": 584.0,
+      "avg_games": 792.0,
+      "win_rate": 50.0,
+      "win_count": 1,
+      "total_count": 2
+    },
+    {
+      "rank": 9,
+      "machine": "アイムジャグラーEX-TP",
+      "total_diff": 1.0,
+      "avg_diff": 7.0,
+      "avg_games": 112.0,
+      "win_rate": 33.3,
+      "win_count": 3,
+      "total_count": 9
+    },
+    {
+      "rank": 10,
+      "machine": "ディスクアップ2",
+      "total_diff": 690.0,
+      "avg_diff": 172.0,
+      "avg_games": 1.0,
+      "win_rate": 50.0,
+      "win_count": 2,
+      "total_count": 4
+    },
+    {
+      "rank": 11,
+      "machine": "吉宗(スマスロ)",
+      "total_diff": 487.0,
+      "avg_diff": 122.0,
+      "avg_games": 1.0,
+      "win_rate": 25.0,
+      "win_count": 1,
+      "total_count": 4
+    },
+    {
+      "rank": 12,
+      "machine": "スマスロ炎炎ノ消防隊",
+      "total_diff": 388.0,
+      "avg_diff": 194.0,
+      "avg_games": 442.0,
+      "win_rate": 50.0,
+      "win_count": 1,
+      "total_count": 2
+    },
+    {
+      "rank": 13,
+      "machine": "サンダーVライトニング",
+      "total_diff": 384.0,
+      "avg_diff": 192.0,
+      "avg_games": 1.0,
+      "win_rate": 50.0,
+      "win_count": 1,
+      "total_count": 2
+    }
+  ],
+  "tail_ranking": [
+    {
+      "tail": "0",
+      "total_diff": null,
+      "avg_diff": null,
+      "avg_games": 1746.0,
+      "win_rate": null,
+      "win_count": null,
+      "total_count": null
+    },
+    {
+      "tail": "1",
+      "total_diff": null,
+      "avg_diff": null,
+      "avg_games": 1178.0,
+      "win_rate": null,
+      "win_count": null,
+      "total_count": null
+    },
+    {
+      "tail": "2",
+      "total_diff": 3571.0,
+      "avg_diff": 179.0,
+      "avg_games": 1092.0,
+      "win_rate": 25.0,
+      "win_count": 5,
+      "total_count": 20
+    },
+    {
+      "tail": "3",
+      "total_diff": 1448.0,
+      "avg_diff": 76.0,
+      "avg_games": 958.0,
+      "win_rate": 26.3,
+      "win_count": 5,
+      "total_count": 19
+    },
+    {
+      "tail": "5",
+      "total_diff": 5452.0,
+      "avg_diff": 287.0,
+      "avg_games": 993.0,
+      "win_rate": 31.6,
+      "win_count": 6,
+      "total_count": 19
+    },
+    {
+      "tail": "6",
+      "total_diff": 3227.0,
+      "avg_diff": 170.0,
+      "avg_games": 1243.0,
+      "win_rate": 31.6,
+      "win_count": 6,
+      "total_count": 19
+    },
+    {
+      "tail": "7",
+      "total_diff": null,
+      "avg_diff": null,
+      "avg_games": 1375.0,
+      "win_rate": null,
+      "win_count": null,
+      "total_count": null
+    },
+    {
+      "tail": "8",
+      "total_diff": null,
+      "avg_diff": null,
+      "avg_games": 999.0,
+      "win_rate": null,
+      "win_count": null,
+      "total_count": null
+    },
+    {
+      "tail": "ゾロ目",
+      "total_diff": 779.0,
+      "avg_diff": 41.0,
+      "avg_games": 1030.0,
+      "win_rate": 26.3,
+      "win_count": 5,
+      "total_count": 19
+    }
+  ]
+}
